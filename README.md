@@ -27,7 +27,7 @@ The engineering harness retains a110GiB operational free-space guard; use a disk
 
 ## Annotation and field export
 
-The original point-view collection and prompt scripts are retained. Set `OPENAI_API_KEY` only in the process environment; no credential is supplied. Newly executed calls require an explicitly dated model and a positive per-command call budget. The prepared profile requests `gpt-4o-2024-08-06`; provider documentation lists it as deprecated as checked on2026-11-14. Actual availability must be checked before execution; never silently substitute another model or claim it was the historical model. No paid calls were made for this release.
+The original point-view collection and prompt scripts are retained. Set `OPENAI_API_KEY` only in the process environment; no credential is supplied. Newly executed calls require an explicitly dated model and a positive per-command call budget. The prepared profile requests `gpt-4o-2024-11-20`; provider documentation lists it as deprecated as checked on2026-11-14. Actual availability must be checked before execution; never silently substitute another model or claim it was the historical model. No paid calls were made for this release.
 
 ```sh
 python vlm_annotation.py --help

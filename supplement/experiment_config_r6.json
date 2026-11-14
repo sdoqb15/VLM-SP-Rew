@@ -4,7 +4,7 @@
   "status": "PREPARED_CONFIGURATION_NOT_EXECUTED_NAVIGATION_RESULTS",
   "original_method_unchanged": true,
   "annotation": {
-    "model": "gpt-4o-2024-08-06",
+    "model": "gpt-4o-2024-11-20",
     "execute": false,
     "max_calls": 0,
     "model_reference": "https://developers.openai.com/api/docs/models/gpt-4o",

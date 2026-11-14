@@ -1,7 +1,7 @@
 {
   "code_URL": "https://github.com/sdoqb15/VLM-SP-Rew",
-  "code_version": "v0.6.1-r6",
-  "model_snapshot_configured": "gpt-4o-2024-08-06",
+  "code_version": "v0.6.2-r6",
+  "model_snapshot_configured": "gpt-4o-2024-11-20",
   "model_snapshot_historical_recovered": false,
   "actual_query_dates": "Not yet executed; captured from request UTC when real calls occur.",
   "reference_CPU_environment": {
