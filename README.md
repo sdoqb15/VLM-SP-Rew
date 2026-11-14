@@ -7,8 +7,8 @@ This repository contains the recovered author implementation, CPU-checked recons
 - `collection.py`, `vlm_annotation.py`, graph/room/path/value scripts: recovered preprocessing pipeline.
 - `paper_contract_r5.py`, `config_paper_r5.yaml`, `export_annotation_field.py --paper-contract`: opt-in original-paper graph/value profile.
 - `tests_revision/`: 72 passing synthetic CPU engineering checks at the pinned source snapshot. These are not navigation efficacy measurements.
-- `supplement/experiment_config_r6.json`: prepared shared field/reward/training/split specification; five seeds,400k maximum environment steps,25k evaluation grid,16/4/16 scene quotas.
-- `supplement/scene_goal_manifest.csv`: schema only, currently zero scene rows. No invented scene identities or original four-pair records are supplied.
+- `supplement/experiment_config_r6.json`: prepared shared field/reward/training/split specification; five seeds,400k maximum environment steps,25k evaluation grid,8/2/8 scene quotas.
+- `supplement/scene_goal_manifest.csv`:26real scene/category-goal metadata records, explicitly newly selected reconstruction cases. They are not recovered original cases. ProcTHOR has8train/2development/8held-out plus4separate representative replacements; RoboTHOR has4official representative episodes. Native reachability/rendering remain unqualified.
 - `release_audit.py`: ordered image hashes, pinned model, raw-response and usage recording for explicitly enabled future calls. API execution is disabled by default.
 
 ## Installation and CPU checks
@@ -40,7 +40,7 @@ Use `--paper-contract --config config_paper_r5.yaml` for the original-paper fiel
 
 The full300-pixel RGB-only environment/reward profile, geometric-control exporter, native end-to-end training/evaluation, and RoboTHOR/R2R adapters remain unqualified. Do not combine paper-contract fields with the legacy96-pixel/goal-channel wrapper and claim an exact original-paper reproduction. `shared_reward_revision_config.json` is a preserved earlier prototype profile; the current prospective specification is `supplement/experiment_config_r6.json`. A specification is not proof of runtime equivalence.
 
-Original four scene-goal identities, historical exact GPT snapshot/query dates, and historical raw predictions are not recovered. The release includes no fabricated raw annotation data, graphs, value fields, scene allocations, measured costs or navigation results. The CSVs are empty schemas; configured quotas are not actual population counts. Run-derived records belong under `artifacts/`, with the layout described below.
+Original four scene-goal identities, historical exact GPT snapshot/query dates, and historical raw predictions are not recovered. The release includes no fabricated raw annotation data, graphs, value fields, scene allocations, measured costs or navigation results. Actual scene/target metadata and allocation are supplied; metadata validity is not native navigability or a measured navigation result. Run-derived records belong under `artifacts/`, with the layout described below.
 
 ## Required empirical artifact layout
 
@@ -51,4 +51,4 @@ Original four scene-goal identities, historical exact GPT snapshot/query dates, 
 `artifacts/runs/`: commands, code/environment/seed manifests, checkpoints, per-episode SR/SPL and all checkpoint curves.
 `artifacts/costs.json`: actual call/token/billing and preprocessing-plus-training wall-time/hardware records. No estimate is labelled an actual bill.
 
-These empirical directories are not present in this initial source release. Code is MIT-licensed with the bundled Dreamer notice retained; third-party scene/model licenses still apply.
+These empirical directories are not present. `supplement/metadata_proxy_examples/` contains191sampled points in four real ProcTHOR scenes, with metadata-derived room/object records and explicitly labelled geometry/room graph/value proxies. These are not VLM annotations or empirical VLM fields. Visibility, image/response/model/date and unqualified values remain null. `supplement/R2R_scene_candidates.json` names four verified R2R scenes, whose ObjectNav target identity is not yet qualified. The earlier16test-scene quota is superseded by8because official RoboTHOR validation has15scenes and R2R-VLNCE val_unseen11. Code is MIT-licensed with the bundled Dreamer notice retained; third-party scene/model licenses still apply.

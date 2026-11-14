@@ -1,0 +1,1112 @@
+{
+  "status": "RECONSTRUCTED_METADATA_NOT_HISTORICAL_OR_MEASURED_NAVIGATION",
+  "representative_pairs": [
+    {
+      "case_id": "R6-ROB-01",
+      "benchmark": "RoboTHOR",
+      "scene_id": "FloorPlan_Train1_1",
+      "source_split": "train",
+      "goal_category": "HousePlant",
+      "goal_instance_id": null,
+      "start_position": {
+        "x": 2.5,
+        "y": 0.9009997248649597,
+        "z": -4.5
+      },
+      "start_yaw": 300,
+      "source_episode_id": "FloorPlan_Train1_1_HousePlant_0",
+      "source_commit": "f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
+      "source_file_SHA256": "b88587f7a949db08caf59f3f47aa48478c52b1561ff929bef22ece283c1d6c59",
+      "status": "OFFICIAL_EPISODE_METADATA_VERIFIED; new rendering/annotation not performed",
+      "historical_original": false,
+      "purpose": "Representative replacement for missing original four cases; not a new held-out evaluation"
+    },
+    {
+      "case_id": "R6-ROB-02",
+      "benchmark": "RoboTHOR",
+      "scene_id": "FloorPlan_Train2_1",
+      "source_split": "train",
+      "goal_category": "HousePlant",
+      "goal_instance_id": null,
+      "start_position": {
+        "x": 3.5,
+        "y": 0.9009996652603149,
+        "z": -4.25
+      },
+      "start_yaw": 90,
+      "source_episode_id": "FloorPlan_Train2_1_HousePlant_0",
+      "source_commit": "f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
+      "source_file_SHA256": "e17235d98a0c3496fe433a4115ba7eda41e86fe021635cca26ce0ea0fdc74a4c",
+      "status": "OFFICIAL_EPISODE_METADATA_VERIFIED; new rendering/annotation not performed",
+      "historical_original": false,
+      "purpose": "Representative replacement for missing original four cases; not a new held-out evaluation"
+    },
+    {
+      "case_id": "R6-ROB-03",
+      "benchmark": "RoboTHOR",
+      "scene_id": "FloorPlan_Train3_1",
+      "source_split": "train",
+      "goal_category": "HousePlant",
+      "goal_instance_id": null,
+      "start_position": {
+        "x": 4.25,
+        "y": 0.9009996652603149,
+        "z": -4.5
+      },
+      "start_yaw": 300,
+      "source_episode_id": "FloorPlan_Train3_1_HousePlant_0",
+      "source_commit": "f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
+      "source_file_SHA256": "9ccd6459e7e096bbc0a49fcee386c5a4d7aef4273dd5b4fc92e063ff8ce1de80",
+      "status": "OFFICIAL_EPISODE_METADATA_VERIFIED; new rendering/annotation not performed",
+      "historical_original": false,
+      "purpose": "Representative replacement for missing original four cases; not a new held-out evaluation"
+    },
+    {
+      "case_id": "R6-ROB-04",
+      "benchmark": "RoboTHOR",
+      "scene_id": "FloorPlan_Train4_1",
+      "source_split": "train",
+      "goal_category": "HousePlant",
+      "goal_instance_id": null,
+      "start_position": {
+        "x": 8.5,
+        "y": 0.9009996652603149,
+        "z": -3.0
+      },
+      "start_yaw": 330,
+      "source_episode_id": "FloorPlan_Train4_1_HousePlant_0",
+      "source_commit": "f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
+      "source_file_SHA256": "d2e116b6932cce3766f9f416903a318ccded16f0c0766e23ceabac35d0a5ad93",
+      "status": "OFFICIAL_EPISODE_METADATA_VERIFIED; new rendering/annotation not performed",
+      "historical_original": false,
+      "purpose": "Representative replacement for missing original four cases; not a new held-out evaluation"
+    },
+    {
+      "case_id": "R6-PROC-train-3",
+      "benchmark": "ProcTHOR-10K",
+      "scene_id": "ProcTHOR-10K/train/3",
+      "public_dataset_index": 3,
+      "source_split": "train",
+      "allocation": "representative",
+      "goal_category": "HousePlant",
+      "goal_instance_id": "HousePlant|surface|6|29",
+      "goal_asset_id": "Houseplant_22",
+      "goal_position": {
+        "x": 8.06967544555664,
+        "y": 1.2367727756500244,
+        "z": 7.437282562255859
+      },
+      "start_position": {
+        "x": 3.25,
+        "y": 0.95,
+        "z": 5.0
+      },
+      "start_rotation": {
+        "x": 0,
+        "y": 90,
+        "z": 0
+      },
+      "room_count": 4,
+      "room_types": [
+        "Bedroom",
+        "Bathroom",
+        "Kitchen",
+        "LivingRoom"
+      ],
+      "house_metadata_path": "procthor-house-metadata/train_000003.json",
+      "house_metadata_SHA256": "d0bfa5cc85f4a17339ba644463040a0d2af2a371909e8726a3477143a552f93c",
+      "floor_polygon_SHA256": "5334811c6f2e1de56aaff6539df5128ac89d64b37cb1e3c6372f2b3d0e801240",
+      "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+      "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+      "historical_original": false
+    },
+    {
+      "case_id": "R6-PROC-train-4",
+      "benchmark": "ProcTHOR-10K",
+      "scene_id": "ProcTHOR-10K/train/4",
+      "public_dataset_index": 4,
+      "source_split": "train",
+      "allocation": "representative",
+      "goal_category": "HousePlant",
+      "goal_instance_id": "HousePlant|7|2|0",
+      "goal_asset_id": "Houseplant_7",
+      "goal_position": {
+        "x": 0.3268324246844643,
+        "y": 0.4274352192878723,
+        "z": 4.694101980111831
+      },
+      "start_position": {
+        "x": 9.0,
+        "y": 0.95,
+        "z": 11.0
+      },
+      "start_rotation": {
+        "x": 0,
+        "y": 270,
+        "z": 0
+      },
+      "room_count": 4,
+      "room_types": [
+        "Bedroom",
+        "Bathroom",
+        "Kitchen",
+        "LivingRoom"
+      ],
+      "house_metadata_path": "procthor-house-metadata/train_000004.json",
+      "house_metadata_SHA256": "989571f44d428b491c4367c81732185310e8aaf24e544adb033eb8b75517e23e",
+      "floor_polygon_SHA256": "bf2424c347e2e1f6f2036abd6f01d50018442ef23363e6f00ff3540f450c6173",
+      "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+      "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+      "historical_original": false
+    },
+    {
+      "case_id": "R6-PROC-train-7",
+      "benchmark": "ProcTHOR-10K",
+      "scene_id": "ProcTHOR-10K/train/7",
+      "public_dataset_index": 7,
+      "source_split": "train",
+      "allocation": "representative",
+      "goal_category": "HousePlant",
+      "goal_instance_id": "HousePlant|6|2|0",
+      "goal_asset_id": "Houseplant_18",
+      "goal_position": {
+        "x": 5.184893661858933,
+        "y": 0.42520612478256226,
+        "z": 1.8570544210652202
+      },
+      "start_position": {
+        "x": 1.75,
+        "y": 0.95,
+        "z": 2.75
+      },
+      "start_rotation": {
+        "x": 0,
+        "y": 270,
+        "z": 0
+      },
+      "room_count": 4,
+      "room_types": [
+        "Bedroom",
+        "Bathroom",
+        "Kitchen",
+        "LivingRoom"
+      ],
+      "house_metadata_path": "procthor-house-metadata/train_000007.json",
+      "house_metadata_SHA256": "81c830a0bc1ef0881efbe6dca6b33c667f586d8e4808766a6d76e269f67f4453",
+      "floor_polygon_SHA256": "d011294b4fb498bbdcf8a43014f6b9fa40de630f44f8b5ed132f1426f023853b",
+      "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+      "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+      "historical_original": false
+    },
+    {
+      "case_id": "R6-PROC-train-15",
+      "benchmark": "ProcTHOR-10K",
+      "scene_id": "ProcTHOR-10K/train/15",
+      "public_dataset_index": 15,
+      "source_split": "train",
+      "allocation": "representative",
+      "goal_category": "HousePlant",
+      "goal_instance_id": "HousePlant|surface|6|29",
+      "goal_asset_id": "Houseplant_10",
+      "goal_position": {
+        "x": 0.897101104259491,
+        "y": 1.0370160341262817,
+        "z": 1.8554781675338745
+      },
+      "start_position": {
+        "x": 9.25,
+        "y": 0.95,
+        "z": 2.75
+      },
+      "start_rotation": {
+        "x": 0,
+        "y": 90,
+        "z": 0
+      },
+      "room_count": 4,
+      "room_types": [
+        "Bedroom",
+        "Bathroom",
+        "Kitchen",
+        "LivingRoom"
+      ],
+      "house_metadata_path": "procthor-house-metadata/train_000015.json",
+      "house_metadata_SHA256": "d88c528a63c53da2092e4d8dae0daa48ac7e74a912de64dbc77b0ffbd7619f5c",
+      "floor_polygon_SHA256": "ecb3d25fcd2fb31edb3cfdeb3f30e75398dd0da0caa8f81c4b16539461018dc0",
+      "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+      "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+      "historical_original": false
+    }
+  ],
+  "ProcTHOR_allocated": {
+    "status": "REAL_METADATA_PREPARED_NOT_RENDERED_OR_TRAINED",
+    "cases": [
+      {
+        "case_id": "R6-PROC-train-3",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/3",
+        "public_dataset_index": 3,
+        "source_split": "train",
+        "allocation": "representative",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|surface|6|29",
+        "goal_asset_id": "Houseplant_22",
+        "goal_position": {
+          "x": 8.06967544555664,
+          "y": 1.2367727756500244,
+          "z": 7.437282562255859
+        },
+        "start_position": {
+          "x": 3.25,
+          "y": 0.95,
+          "z": 5.0
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000003.json",
+        "house_metadata_SHA256": "d0bfa5cc85f4a17339ba644463040a0d2af2a371909e8726a3477143a552f93c",
+        "floor_polygon_SHA256": "5334811c6f2e1de56aaff6539df5128ac89d64b37cb1e3c6372f2b3d0e801240",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-4",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/4",
+        "public_dataset_index": 4,
+        "source_split": "train",
+        "allocation": "representative",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|7|2|0",
+        "goal_asset_id": "Houseplant_7",
+        "goal_position": {
+          "x": 0.3268324246844643,
+          "y": 0.4274352192878723,
+          "z": 4.694101980111831
+        },
+        "start_position": {
+          "x": 9.0,
+          "y": 0.95,
+          "z": 11.0
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 270,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000004.json",
+        "house_metadata_SHA256": "989571f44d428b491c4367c81732185310e8aaf24e544adb033eb8b75517e23e",
+        "floor_polygon_SHA256": "bf2424c347e2e1f6f2036abd6f01d50018442ef23363e6f00ff3540f450c6173",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-7",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/7",
+        "public_dataset_index": 7,
+        "source_split": "train",
+        "allocation": "representative",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|6|2|0",
+        "goal_asset_id": "Houseplant_18",
+        "goal_position": {
+          "x": 5.184893661858933,
+          "y": 0.42520612478256226,
+          "z": 1.8570544210652202
+        },
+        "start_position": {
+          "x": 1.75,
+          "y": 0.95,
+          "z": 2.75
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 270,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000007.json",
+        "house_metadata_SHA256": "81c830a0bc1ef0881efbe6dca6b33c667f586d8e4808766a6d76e269f67f4453",
+        "floor_polygon_SHA256": "d011294b4fb498bbdcf8a43014f6b9fa40de630f44f8b5ed132f1426f023853b",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-15",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/15",
+        "public_dataset_index": 15,
+        "source_split": "train",
+        "allocation": "representative",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|surface|6|29",
+        "goal_asset_id": "Houseplant_10",
+        "goal_position": {
+          "x": 0.897101104259491,
+          "y": 1.0370160341262817,
+          "z": 1.8554781675338745
+        },
+        "start_position": {
+          "x": 9.25,
+          "y": 0.95,
+          "z": 2.75
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000015.json",
+        "house_metadata_SHA256": "d88c528a63c53da2092e4d8dae0daa48ac7e74a912de64dbc77b0ffbd7619f5c",
+        "floor_polygon_SHA256": "ecb3d25fcd2fb31edb3cfdeb3f30e75398dd0da0caa8f81c4b16539461018dc0",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-18",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/18",
+        "public_dataset_index": 18,
+        "source_split": "train",
+        "allocation": "train",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|7|2|0",
+        "goal_asset_id": "Houseplant_26",
+        "goal_position": {
+          "x": 5.570047329288365,
+          "y": 0.5485243797302246,
+          "z": 3.0075753625616937
+        },
+        "start_position": {
+          "x": 3.0,
+          "y": 0.95,
+          "z": 3.0
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000018.json",
+        "house_metadata_SHA256": "2cf142b04c41588c3725612005dafae212a6eda059576b646a2485b8c9a9b6de",
+        "floor_polygon_SHA256": "176943f5af090ecedb1e48b30aef70d3e3aba1d8dea1fea1b7a10629d2ec20a7",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-35",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/35",
+        "public_dataset_index": 35,
+        "source_split": "train",
+        "allocation": "train",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|4|5|0",
+        "goal_asset_id": "Houseplant_27",
+        "goal_position": {
+          "x": 3.201043564120883,
+          "y": 0.44784826040267944,
+          "z": 2.0294145171192945
+        },
+        "start_position": {
+          "x": 2.0,
+          "y": 0.95,
+          "z": 3.75
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000035.json",
+        "house_metadata_SHA256": "f782065c96268f879e79426a43838107d6882e062fcefe05c870715c2290b708",
+        "floor_polygon_SHA256": "e2049d5ad77f70ab5e108011af4055a5997fdba8ccceb88f4bf9515a6f47f341",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-48",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/48",
+        "public_dataset_index": 48,
+        "source_split": "train",
+        "allocation": "train",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|6|4|0",
+        "goal_asset_id": "Houseplant_18",
+        "goal_position": {
+          "x": 8.457043436505494,
+          "y": 0.42520612478256226,
+          "z": 4.451555482036737
+        },
+        "start_position": {
+          "x": 8.75,
+          "y": 0.95,
+          "z": 2.25
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 270,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000048.json",
+        "house_metadata_SHA256": "64b3edb2661e959a07a15d64840a42a51060bd061ed5cf3c2ca2be18cdfda168",
+        "floor_polygon_SHA256": "41044cdc73b406aea7a8e22b37d28c5c64cca8a88f9eb10b0229b35bc62d8de5",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-56",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/56",
+        "public_dataset_index": 56,
+        "source_split": "train",
+        "allocation": "train",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|surface|4|18",
+        "goal_asset_id": "RoboTHOR_houseplant_ai2_2_v",
+        "goal_position": {
+          "x": 0.5227974057197571,
+          "y": 1.1958928108215332,
+          "z": 3.2300305366516113
+        },
+        "start_position": {
+          "x": 7.5,
+          "y": 0.95,
+          "z": 4.75
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 270,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000056.json",
+        "house_metadata_SHA256": "7a53a099d97415613a9d6064e4d5aaeedb9e30282affba754545bedb63934241",
+        "floor_polygon_SHA256": "0feca63eb43066673cd5cd095324df26a667057dd4717d634102da32f47e5ba4",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-59",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/59",
+        "public_dataset_index": 59,
+        "source_split": "train",
+        "allocation": "train",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|4|3|0",
+        "goal_asset_id": "Houseplant_18",
+        "goal_position": {
+          "x": 11.229960440492931,
+          "y": 0.42520612478256226,
+          "z": 7.528279429341962
+        },
+        "start_position": {
+          "x": 2.75,
+          "y": 0.95,
+          "z": 6.25
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000059.json",
+        "house_metadata_SHA256": "bcb58dd5719a39923cff8604eea972a1237a98ae18cc22ea726955baa3243bc0",
+        "floor_polygon_SHA256": "0aadd3131b7f522a4c6a08e1b810f2546330f82bd1c621696d4e9752c5be907d",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-67",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/67",
+        "public_dataset_index": 67,
+        "source_split": "train",
+        "allocation": "train",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|7|4|0",
+        "goal_asset_id": "Houseplant_27",
+        "goal_position": {
+          "x": 6.923686797436059,
+          "y": 0.44784826040267944,
+          "z": 3.1781503595237783
+        },
+        "start_position": {
+          "x": 1.75,
+          "y": 0.95,
+          "z": 7.75
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 180,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000067.json",
+        "house_metadata_SHA256": "116bd0ef544d10379e0a1985b8c2e51cf7a87d4511b4907d8bec65bebd965806",
+        "floor_polygon_SHA256": "cd71f5ca052f22abf8a1f350667fc32e57fe33fc82280dcb15520ac8bcadc70e",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-69",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/69",
+        "public_dataset_index": 69,
+        "source_split": "train",
+        "allocation": "train",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|surface|6|19",
+        "goal_asset_id": "Houseplant_10",
+        "goal_position": {
+          "x": 6.718682289123535,
+          "y": 0.8853418231010437,
+          "z": 6.592113494873047
+        },
+        "start_position": {
+          "x": 6.5,
+          "y": 0.95,
+          "z": 4.5
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000069.json",
+        "house_metadata_SHA256": "272222a3f3064ad57f34b752e69f63857bc8797c880e757363bc2f70aa0df23e",
+        "floor_polygon_SHA256": "fa2e063a0f54ec007d8a665fe2829dc7ce0a78e250c59dae3a921a0b22108da9",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-train-73",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/train/73",
+        "public_dataset_index": 73,
+        "source_split": "train",
+        "allocation": "train",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|4|2|0",
+        "goal_asset_id": "Houseplant_18",
+        "goal_position": {
+          "x": 2.332556976079905,
+          "y": 0.42520612478256226,
+          "z": 0.16277784699603465
+        },
+        "start_position": {
+          "x": 7.0,
+          "y": 0.95,
+          "z": 6.5
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/train_000073.json",
+        "house_metadata_SHA256": "34895d4780470e07ddda0c090474cdebb04e805678b0a5eb387722bef241c8f6",
+        "floor_polygon_SHA256": "8ec66460cf17657fe8ae3b649bbdb072351c56224acb982c3f4a48fd453584c1",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-4",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/4",
+        "public_dataset_index": 4,
+        "source_split": "val",
+        "allocation": "development",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|4|3|0",
+        "goal_asset_id": "Houseplant_16",
+        "goal_position": {
+          "x": 3.800891530894687,
+          "y": 0.5446662902832031,
+          "z": 6.601193095878808
+        },
+        "start_position": {
+          "x": 2.75,
+          "y": 0.95,
+          "z": 11.25
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 180,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000004.json",
+        "house_metadata_SHA256": "d0d6b1130ad5dcf7562004497ecf928b3b987cd1484600037ed17212d976fbf9",
+        "floor_polygon_SHA256": "fc5029b971290799652c17cb4371914891397f54cc32b080ea85318b6d7abf8c",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-5",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/5",
+        "public_dataset_index": 5,
+        "source_split": "val",
+        "allocation": "development",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|4|2|0",
+        "goal_asset_id": "Houseplant_17",
+        "goal_position": {
+          "x": 0.3215716334042276,
+          "y": 0.4130663275718689,
+          "z": 5.3066484501938795
+        },
+        "start_position": {
+          "x": 7.25,
+          "y": 0.95,
+          "z": 3.25
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000005.json",
+        "house_metadata_SHA256": "0034a85396ff7c032443d6ae64f648096e15d75b4809f57c6c9850ea93908eef",
+        "floor_polygon_SHA256": "9d134509636fa60830ef83f518f5ea185a635151d73f0d6e720a96faf38cf8b9",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-10",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/10",
+        "public_dataset_index": 10,
+        "source_split": "val",
+        "allocation": "test",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|4|4|0",
+        "goal_asset_id": "Houseplant_16",
+        "goal_position": {
+          "x": 9.660278301937842,
+          "y": 0.5446662902832031,
+          "z": 11.296552168569772
+        },
+        "start_position": {
+          "x": 8.5,
+          "y": 0.95,
+          "z": 4.75
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 180,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000010.json",
+        "house_metadata_SHA256": "9347fcc8ea45944f96cd0b020a9a3d424e680238f71de9b285da4ba5a808c479",
+        "floor_polygon_SHA256": "66911098745eed5f2ac32bf3e83e74b99e68e6f17b141e7c98d871bf49be8271",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-13",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/13",
+        "public_dataset_index": 13,
+        "source_split": "val",
+        "allocation": "test",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|7|2|0",
+        "goal_asset_id": "Houseplant_16",
+        "goal_position": {
+          "x": 0.32591909609349196,
+          "y": 0.5446662902832031,
+          "z": 8.342388353257805
+        },
+        "start_position": {
+          "x": 6.5,
+          "y": 0.95,
+          "z": 4.75
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 180,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000013.json",
+        "house_metadata_SHA256": "f99704ae6177cc360ebe158255583b0c370683881804cf3d41c8c83994d45208",
+        "floor_polygon_SHA256": "1b2c63a7117866999a4493423919ef3136f58eb4444ad2e0e4559118711d299b",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-18",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/18",
+        "public_dataset_index": 18,
+        "source_split": "val",
+        "allocation": "test",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|7|3|0",
+        "goal_asset_id": "Houseplant_16",
+        "goal_position": {
+          "x": 10.553284915505643,
+          "y": 0.5446662902832031,
+          "z": 12.374405667555358
+        },
+        "start_position": {
+          "x": 1.75,
+          "y": 0.95,
+          "z": 6.5
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 180,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000018.json",
+        "house_metadata_SHA256": "ca0fded2a8a69d8e837176e674c1131d890cfd7d8fded8e7ebe908cf51dcb8f3",
+        "floor_polygon_SHA256": "646fea3ba5ee82173165fd4331061bd6d083f87b79e2637263f7648f89aafe56",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-21",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/21",
+        "public_dataset_index": 21,
+        "source_split": "val",
+        "allocation": "test",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|6|2|0",
+        "goal_asset_id": "Houseplant_17",
+        "goal_position": {
+          "x": 13.211638056140561,
+          "y": 0.4130663275718689,
+          "z": 4.880414167217843
+        },
+        "start_position": {
+          "x": 3.75,
+          "y": 0.95,
+          "z": 2.75
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 180,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000021.json",
+        "house_metadata_SHA256": "236496d99d974c607119dd9bc5d359f7f4972b6e89229e2234817bc1736f7dc2",
+        "floor_polygon_SHA256": "fa3c4b98baa37dfd86f95c96fdce1eeabd015bdab2b11a0da26b1996c5e7e3e2",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-27",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/27",
+        "public_dataset_index": 27,
+        "source_split": "val",
+        "allocation": "test",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|6|3|0",
+        "goal_asset_id": "Houseplant_16",
+        "goal_position": {
+          "x": 6.80673585872449,
+          "y": 0.5446662902832031,
+          "z": 4.779566796290876
+        },
+        "start_position": {
+          "x": 7.5,
+          "y": 0.95,
+          "z": 8.0
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000027.json",
+        "house_metadata_SHA256": "a8df72eb908baf1804cc67fb7a9b5dbddcb9371e7eb09e536d480be64a216c22",
+        "floor_polygon_SHA256": "db8e95963db86cfe5c03bda8a12a37a3c2907b24aa15c560fad0839e50bebf60",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-36",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/36",
+        "public_dataset_index": 36,
+        "source_split": "val",
+        "allocation": "test",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|surface|4|4",
+        "goal_asset_id": "Houseplant_12",
+        "goal_position": {
+          "x": 4.225331783294678,
+          "y": 1.0480844974517822,
+          "z": 5.198945999145508
+        },
+        "start_position": {
+          "x": 1.5,
+          "y": 0.95,
+          "z": 3.0
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 270,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000036.json",
+        "house_metadata_SHA256": "eaaa8c4288d0a4e4a2d48d1bc4910997263329e341547972442e9e4fe21ac1df",
+        "floor_polygon_SHA256": "fe7491a2cdba56cc1d82023d7b948be86841c37227e7eeb74b233482fadefb2e",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-39",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/39",
+        "public_dataset_index": 39,
+        "source_split": "val",
+        "allocation": "test",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|surface|4|5",
+        "goal_asset_id": "Houseplant_30",
+        "goal_position": {
+          "x": 11.701698303222656,
+          "y": 1.0777525901794434,
+          "z": 3.5760507583618164
+        },
+        "start_position": {
+          "x": 5.0,
+          "y": 0.95,
+          "z": 3.0
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 270,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000039.json",
+        "house_metadata_SHA256": "da82d4847a8d3896fb80e283bb36edbd60b6045933860ec89a80bb055f05ebea",
+        "floor_polygon_SHA256": "c3269b4ebdc6c8a38e857c95759ec66e98e2f9b174379f21f131660e54998aa2",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      },
+      {
+        "case_id": "R6-PROC-val-45",
+        "benchmark": "ProcTHOR-10K",
+        "scene_id": "ProcTHOR-10K/val/45",
+        "public_dataset_index": 45,
+        "source_split": "val",
+        "allocation": "test",
+        "goal_category": "HousePlant",
+        "goal_instance_id": "HousePlant|7|2|0",
+        "goal_asset_id": "Houseplant_17",
+        "goal_position": {
+          "x": 3.243189335497151,
+          "y": 0.4130663275718689,
+          "z": 1.8319545936235264
+        },
+        "start_position": {
+          "x": 5.75,
+          "y": 0.95,
+          "z": 3.25
+        },
+        "start_rotation": {
+          "x": 0,
+          "y": 270,
+          "z": 0
+        },
+        "room_count": 4,
+        "room_types": [
+          "Bedroom",
+          "Bathroom",
+          "Kitchen",
+          "LivingRoom"
+        ],
+        "house_metadata_path": "procthor-house-metadata/val_000045.json",
+        "house_metadata_SHA256": "e94b3c081d7d4a4d72a49435472acb5e9338f1306266bfce51f6dedb97da29c6",
+        "floor_polygon_SHA256": "507467c328be379c0bc7dd92342cf235f7c7423525d0f1fc949e1abc59dcab70",
+        "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+        "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+        "historical_original": false
+      }
+    ],
+    "counts": {
+      "representative": 4,
+      "train": 8,
+      "development": 2,
+      "test": 8
+    },
+    "source_house_geometries_disjoint": true,
+    "goal_category": "HousePlant"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "UTC": "2026-11-14T12:04:55.268539+00:00",
+  "purpose": "Actual facts and missing-record provenance forR6; do not invent completed scene allocation, training budget or annotation metadata.",
+  "actual_old_supplementary_navigation_runs": 0,
+  "actual_old_supplementary_VLM_calls": 0,
+  "original_reported_pairs_per_benchmark": 4,
+  "original_exact_scene_IDs_recovered": false,
+  "populated_supplementary_pair_manifest_rows": 0,
+  "historical_model_snapshot": null,
+  "historical_query_dates": null,
+  "historical_training_steps": null,
+  "historical_evaluation_grid": null,
+  "historical_costs": null,
+  "original_code_model_alias_lines": [],
+  "reference_engineering_environment": {
+    "Python": "3.10.12",
+    "ai2thor": "5.0.0",
+    "jax": "0.4.33",
+    "jaxlib": "0.4.33",
+    "numpy": "1.26.4",
+    "pillow": "11.3.0",
+    "scikit-learn": "1.2.2"
+  },
+  "code_source_HEAD": "3a0d769630dbc039425405a41b61728d06c04376",
+  "code_source_URL": "https://github.com/sdoqb15/nav_rl_research/tree/main/publication-prep/access-2026-28868-minimal-revision-20261109/revised-code-paper-r5",
+  "archive_access": "Private GitHub; do not claim public data release or DOI.",
+  "engineering_checks_passed": 72,
+  "engineering_checks_are_not_navigation_results": true,
+  "field_code_scope": "ORIGINAL_PAPER_FIELD_EXPORT_ONLY_PARTIAL_RUNTIME_NOT_QUALIFIED",
+  "training_entrypoint_default_steps": 10000000,
+  "default_steps_not_a_run_record": true,
+  "recovered_checkpoint_save_interval_seconds": 900,
+  "fixed_evaluation_step_grid_configured": false,
+  "already_proposed_seed_configuration": [
+    288681,
+    288682,
+    288683,
+    288684,
+    288685
+  ],
+  "seeds_not_executed_as_supplementary_runs": true,
+  "original_paper_episode_horizon": 200,
+  "original_paper_shared_Dreamer_hyperparameters": "Table5source retained; not proof of actual historical run settings.",
+  "frozen_paper_field_parameters": {
+    "N": 50,
+    "d_min": 1.0,
+    "tau_room": 0.3,
+    "delta_vis": 2,
+    "delta_novis": 5,
+    "K_vis": 3,
+    "alpha_k": [
+      5,
+      4,
+      3
+    ],
+    "beta_k": [
+      2,
+      1,
+      0,
+      -1
+    ],
+    "tau": 3,
+    "w_hi": 1,
+    "w_lo": 0.5,
+    "r_up": 1,
+    "r_down": -1
+  },
+  "unresolved_environment_contract": [
+    "Exact original goal-distance coefficient",
+    "Stop visibility predicate",
+    "native renderer build for oldR5 runtime",
+    "benchmark adapters and qualified navigation references"
+  ],
+  "sources": {
+    "original_pair_manifest": {
+      "path": "/mnt/chenxuda/nav_rl_research/publication-prep/access-2026-28868-minimal-revision-20261109/01_sources/pair_manifest.csv",
+      "SHA256": "cf093ea275123ddaaceb77e851ead988d606fcf497bc2819f0c7978ca1ac7063",
+      "data_rows": 0
+    },
+    "old_metadata": {
+      "path": "/mnt/chenxuda/nav_rl_research/publication-prep/access-2026-28868-minimal-revision-20261109/01_sources/actual_run_metadata.json",
+      "SHA256": "73c9c8d52b0248c4a859c1ad0943bb050def5064a097a0a87008df5cf655722c"
+    },
+    "code_qualification": "/mnt/chenxuda/nav_rl_research/publication-prep/access-2026-28868-minimal-revision-20261109/11_original_paper_contract_code_20261114/FIELD_EXPORT_STATUS.json"
+  },
+  "no_new_experiment_or_API_started": true
+}

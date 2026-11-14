@@ -49,9 +49,9 @@
       "ProcTHOR",
       "R2R-adapted ObjectNav"
     ],
-    "train_scenes_per_condition": 16,
-    "development_scenes_per_condition": 4,
-    "test_scenes_per_condition": 16,
+    "train_scenes_per_condition": 8,
+    "development_scenes_per_condition": 2,
+    "test_scenes_per_condition": 8,
     "target_category": "HousePlant",
     "fixed_goal_per_policy_run": true,
     "goal_mapping": {
@@ -60,17 +60,19 @@
       "R2R_adapted": "plant semantic category; requires actual asset/category adapter qualification"
     },
     "starts_per_scene": 10,
-    "training_pairs_per_condition": 16,
-    "development_pairs_per_condition": 4,
-    "test_pairs_per_condition": 16,
-    "evaluation_episodes_per_fit_per_condition": 160,
+    "training_pairs_per_condition": 8,
+    "development_pairs_per_condition": 2,
+    "test_pairs_per_condition": 8,
+    "evaluation_episodes_per_fit_per_condition": 80,
     "allocation_seed": 288680,
-    "select_rule": "Select eligible scenes by ascending SHA256 of allocation_seed|benchmark|official_split|scene_id; keep source scan/house identities disjoint; never resample according to outcomes.",
+    "select_rule": "Use the released explicitly enumerated metadata-only reconstruction allocation. Do not select by navigation outcomes.",
     "official_test_policy": "Use public development/evaluation assets only when official test labels are unavailable; declare the actual source split in the populated manifest. Never call a custom holdout the official hidden test.",
-    "populated_actual_scene_rows": 0,
+    "populated_actual_scene_rows": 26,
     "actual_scene_ids_status": "Not recovered or allocated. Concrete counts above are configured quotas, not observed scene records.",
     "manifest": "supplement/scene_goal_manifest.csv",
-    "inventory_input": "supplement/scene_inventory.csv"
+    "inventory_input": "supplement/scene_inventory.csv",
+    "quota_change_reason": "R6 minimum reconstruction:8held-out scenes exceeds4pairs; official RoboTHOR validation has15scenes and R2R-VLNCE val_unseen11, so the earlier16test-scene quota is not used.",
+    "actual_allocation_status": "ProcTHOR8train/2development/8test scene-goal metadata allocated, plus4separate representative replacements. RoboTHOR has4official category-goal representative episodes. R2R scenes require actual ObjectNav target qualification."
   },
   "training": {
     "seeds": [

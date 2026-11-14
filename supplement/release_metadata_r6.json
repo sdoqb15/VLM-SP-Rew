@@ -1,0 +1,33 @@
+{
+  "code_URL": "https://github.com/sdoqb15/VLM-SP-Rew",
+  "code_version": "v0.6.1-r6",
+  "model_snapshot_configured": "gpt-4o-2024-08-06",
+  "model_snapshot_historical_recovered": false,
+  "actual_query_dates": "Not yet executed; captured from request UTC when real calls occur.",
+  "reference_CPU_environment": {
+    "Python": "3.10.12",
+    "ai2thor": "5.0.0",
+    "jax": "0.4.33",
+    "jaxlib": "0.4.33",
+    "numpy": "1.26.4",
+    "pillow": "11.3.0",
+    "scikit-learn": "1.2.2"
+  },
+  "historical_Dreamer_upstream_commit": "Not recovered; supplied source bytes are pinned by public release commit.",
+  "actual_allocated_ProcTHOR_scene_counts": {
+    "representative": 4,
+    "train": 8,
+    "development": 2,
+    "test": 8
+  },
+  "actual_metadata_manifest_rows": 26,
+  "all_actual_scene_records_are_reconstruction": true,
+  "native_runtime_qualification_complete": false,
+  "raw_VLM_outputs_released": false,
+  "actual_new_navigation_experiments": 0,
+  "configuration_file": "supplement/experiment_config_r6.json",
+  "scene_manifest": "supplement/scene_goal_manifest.csv",
+  "cost_record": "supplement/costs.json",
+  "immutable_code_commit_previous_source": "393d3b2c911b1d3b639a0b390e23153c9fa48e0e",
+  "metadata_proxy_examples": "191points in4realProcTHORhouses, not actual VLM outputs"
+}

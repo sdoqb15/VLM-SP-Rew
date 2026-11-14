@@ -1,0 +1,381 @@
+{
+  "status": "ILLUSTRATIVE_GEOMETRY_AND_ROOM_PROXY_NOT_VLM_VALUE_FIELD",
+  "values": [
+    {
+      "point_id": "p000",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p001",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p002",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p003",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p004",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p005",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p006",
+      "geometry_hops": null,
+      "within_target_room_proxy": true,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p007",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p008",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p009",
+      "geometry_hops": 4,
+      "within_target_room_proxy": true,
+      "value_proxy": 4,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p010",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p011",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p012",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p013",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p014",
+      "geometry_hops": null,
+      "within_target_room_proxy": true,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p015",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p016",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p017",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p018",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p019",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p020",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p021",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p022",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p023",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p024",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p025",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p026",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p027",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p028",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p029",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p030",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p031",
+      "geometry_hops": null,
+      "within_target_room_proxy": true,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p032",
+      "geometry_hops": null,
+      "within_target_room_proxy": true,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p033",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p034",
+      "geometry_hops": 3,
+      "within_target_room_proxy": true,
+      "value_proxy": 4,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p035",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p036",
+      "geometry_hops": null,
+      "within_target_room_proxy": true,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p037",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p038",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p039",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p040",
+      "geometry_hops": null,
+      "within_target_room_proxy": true,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p041",
+      "geometry_hops": 2,
+      "within_target_room_proxy": true,
+      "value_proxy": 5,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p042",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p043",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p044",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p045",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p046",
+      "geometry_hops": null,
+      "within_target_room_proxy": true,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p047",
+      "geometry_hops": 1,
+      "within_target_room_proxy": true,
+      "value_proxy": 5,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p048",
+      "geometry_hops": 2,
+      "within_target_room_proxy": true,
+      "value_proxy": 5,
+      "usable_as_real_VLM_field": false
+    },
+    {
+      "point_id": "p049",
+      "geometry_hops": null,
+      "within_target_room_proxy": false,
+      "value_proxy": null,
+      "usable_as_real_VLM_field": false
+    }
+  ],
+  "unknown_unreachable_values_not_fabricated": true,
+  "parameters": {
+    "N": 50,
+    "d_min": 1.0,
+    "tau_room": 0.3,
+    "delta_vis": 2,
+    "delta_novis": 5,
+    "K_vis": 3,
+    "alpha_k": [
+      5,
+      4,
+      3
+    ],
+    "beta_k": [
+      2,
+      1,
+      0,
+      -1
+    ],
+    "beta_tail_step": -1,
+    "tau": 3,
+    "w_hi": 1,
+    "w_lo": 0.5,
+    "r_up": 1,
+    "r_down": -1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "NO_RECONSTRUCTED_NAVIGATION_OR_VLM_ANNOTATION_EXECUTED",
+  "preparation_paid_VLM_calls": 0,
+  "preparation_API_cost_USD": 0,
+  "actual_experiment_query_count": null,
+  "actual_experiment_API_cost_USD": null,
+  "actual_experiment_preprocessing_seconds": null,
+  "actual_experiment_training_seconds": null,
+  "experiment_hardware": null,
+  "historical_cost_recovered": false,
+  "required_actual_records": "release_audit per-call UTC/model/usage; measured capture/graph/field/train durations; applicable provider rate or bill. Populate from execution, never from illustrative result values."
+}

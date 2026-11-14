@@ -2,3 +2,5 @@ The dreamerv3/ and embodied/ directories derive from danijar/dreamerv3 with loca
 Exact historical upstream commit is not recovered; this release pins the supplied bytes.
 Retain third_party_licenses/DreamerV3_MIT.txt. Scene assets and external models are not redistributed.
 No license to third-party assets is granted by this repository.
+
+The scene/point/graph/value preparation examples derive from Allen Institute for AI ProcTHOR-10K metadata, revision439193522244720b86d8c81cde2e51e3a4d150cf, Apache2.0; license retained in third_party_licenses/ProcTHOR10K_Apache2.txt. The derived files prominently identify modifications and proxy limitations. RoboTHOR case identities derive from allenai/robothor-challenge f3c4f35bc397aff4d5236e269efe3ff41f6d218e. R2R candidate identities derive from the official R2R training metadata, not ObjectNav labels. No third-party meshes, textures or model weights are redistributed.

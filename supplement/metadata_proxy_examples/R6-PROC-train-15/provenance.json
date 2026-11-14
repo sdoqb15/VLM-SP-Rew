@@ -1,0 +1,44 @@
+{
+  "case": {
+    "case_id": "R6-PROC-train-15",
+    "benchmark": "ProcTHOR-10K",
+    "scene_id": "ProcTHOR-10K/train/15",
+    "public_dataset_index": 15,
+    "source_split": "train",
+    "allocation": "representative",
+    "goal_category": "HousePlant",
+    "goal_instance_id": "HousePlant|surface|6|29",
+    "goal_asset_id": "Houseplant_10",
+    "goal_position": {
+      "x": 0.897101104259491,
+      "y": 1.0370160341262817,
+      "z": 1.8554781675338745
+    },
+    "start_position": {
+      "x": 9.25,
+      "y": 0.95,
+      "z": 2.75
+    },
+    "start_rotation": {
+      "x": 0,
+      "y": 90,
+      "z": 0
+    },
+    "room_count": 4,
+    "room_types": [
+      "Bedroom",
+      "Bathroom",
+      "Kitchen",
+      "LivingRoom"
+    ],
+    "house_metadata_path": "procthor-house-metadata/train_000015.json",
+    "house_metadata_SHA256": "d88c528a63c53da2092e4d8dae0daa48ac7e74a912de64dbc77b0ffbd7619f5c",
+    "floor_polygon_SHA256": "ecb3d25fcd2fb31edb3cfdeb3f30e75398dd0da0caa8f81c4b16539461018dc0",
+    "source_revision": "439193522244720b86d8c81cde2e51e3a4d150cf",
+    "status": "ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed",
+    "historical_original": false
+  },
+  "source_house_SHA256": "d88c528a63c53da2092e4d8dae0daa48ac7e74a912de64dbc77b0ffbd7619f5c",
+  "source": "Official ProcTHOR-10K metadata; no rendered frames, API calls or learned predictions.",
+  "caveat": "Room membership is not visual recognition; same-room is not target visibility. Graph ignores furniture collisions and does not infer doors. These are transparent schema/preparation examples only, never empirical VLM/nav evidence."
+}
