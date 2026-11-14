@@ -1,0 +1,4 @@
+The dreamerv3/ and embodied/ directories derive from danijar/dreamerv3 with local changes.
+Exact historical upstream commit is not recovered; this release pins the supplied bytes.
+Retain third_party_licenses/DreamerV3_MIT.txt. Scene assets and external models are not redistributed.
+No license to third-party assets is granted by this repository.

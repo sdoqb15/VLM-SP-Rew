@@ -1,0 +1,15 @@
+{
+  "step_penalty": -0.01,
+  "success_reward": 100.0,
+  "distance_progress_clip": 0.25,
+  "horizon_penalty": -10.0,
+  "success_distance_m": 1.0,
+  "lambda_shaping": 1.0,
+  "tau": 3.0,
+  "w_hi": 1.0,
+  "w_lo": 0.5,
+  "r_up": 1.0,
+  "r_down": -1.0,
+  "source": "Recovered example defaults, shared across Env/Geo/Geo+Vis/VLM; proposed rerun config, not recovered historical run metadata",
+  "initial_value_rule": "Revision initializes field at reset so first transition matches manuscript equation; retain original source snapshot for difference review"
+}

@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "protocol_version": "r6-config-20261114",
+  "status": "PREPARED_CONFIGURATION_NOT_EXECUTED_NAVIGATION_RESULTS",
+  "original_method_unchanged": true,
+  "annotation": {
+    "model": "gpt-4o-2024-08-06",
+    "execute": false,
+    "max_calls": 0,
+    "model_reference": "https://developers.openai.com/api/docs/models/gpt-4o",
+    "reference_checked": "2026-11-14",
+    "reference_status": "Listed by provider as deprecated; actual availability must be checked before paid execution. Do not silently substitute.",
+    "historical_snapshot_recovered": false,
+    "historical_query_dates_recovered": false,
+    "views_per_point": 8,
+    "views_yaw_degrees": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "calls_per_point": 2,
+    "temperatures": {
+      "objects_room_visibility": 0.3,
+      "navigability": 0.2
+    },
+    "max_output_tokens": {
+      "objects_room_visibility": 300,
+      "navigability": 200
+    },
+    "auto_capture": [
+      "UTC request time",
+      "requested and returned model",
+      "input image SHA256 and order",
+      "full raw response",
+      "parsed labels",
+      "usage tokens",
+      "failure record"
+    ],
+    "cost_record": "Measured usage and applicable provider rate/billing record; never infer actual billed cost from a maximum-call budget."
+  },
+  "populations": {
+    "benchmarks": [
+      "RoboTHOR",
+      "ProcTHOR",
+      "R2R-adapted ObjectNav"
+    ],
+    "train_scenes_per_condition": 16,
+    "development_scenes_per_condition": 4,
+    "test_scenes_per_condition": 16,
+    "target_category": "HousePlant",
+    "fixed_goal_per_policy_run": true,
+    "goal_mapping": {
+      "RoboTHOR": "HousePlant",
+      "ProcTHOR": "HousePlant",
+      "R2R_adapted": "plant semantic category; requires actual asset/category adapter qualification"
+    },
+    "starts_per_scene": 10,
+    "training_pairs_per_condition": 16,
+    "development_pairs_per_condition": 4,
+    "test_pairs_per_condition": 16,
+    "evaluation_episodes_per_fit_per_condition": 160,
+    "allocation_seed": 288680,
+    "select_rule": "Select eligible scenes by ascending SHA256 of allocation_seed|benchmark|official_split|scene_id; keep source scan/house identities disjoint; never resample according to outcomes.",
+    "official_test_policy": "Use public development/evaluation assets only when official test labels are unavailable; declare the actual source split in the populated manifest. Never call a custom holdout the official hidden test.",
+    "populated_actual_scene_rows": 0,
+    "actual_scene_ids_status": "Not recovered or allocated. Concrete counts above are configured quotas, not observed scene records.",
+    "manifest": "supplement/scene_goal_manifest.csv",
+    "inventory_input": "supplement/scene_inventory.csv"
+  },
+  "training": {
+    "seeds": [
+      288681,
+      288682,
+      288683,
+      288684,
+      288685
+    ],
+    "max_environment_steps": 400000,
+    "evaluation_environment_steps": [
+      0,
+      25000,
+      50000,
+      75000,
+      100000,
+      125000,
+      150000,
+      175000,
+      200000,
+      225000,
+      250000,
+      275000,
+      300000,
+      325000,
+      350000,
+      375000,
+      400000
+    ],
+    "budget_rationale": "Fixed common ceiling above the original reported Dreamer threshold counts of150k,220k,350k; not evidence of convergence or an optimal budget.",
+    "original_historical_budget_recovered": false,
+    "checkpoint_selection": "Primary endpoint is the final common400k checkpoint. Development-only checkpoint choices, if used, must be separately declared; never select by test outcomes.",
+    "actor_observation": {
+      "image_shape": [
+        300,
+        300,
+        3
+      ],
+      "dtype": "uint8",
+      "goal_channel": false,
+      "history": "Dreamer recurrent state and prior actions"
+    },
+    "max_episode_steps": 200,
+    "actions": [
+      "MoveAhead",
+      "RotateLeft",
+      "RotateRight",
+      "Stop"
+    ],
+    "move_ahead_metres": 0.25,
+    "rotation_degrees": 90,
+    "field_profile": "config_paper_r5.yaml",
+    "learner_hyperparameters": "Original manuscript Dreamer hyperparameter table; architecture unchanged"
+  },
+  "environment_reward": {
+    "step_penalty": -1.0,
+    "success_reward": 100.0,
+    "distance_coefficient": 1.0,
+    "progress_formula": "coefficient*(previous_goal_distance-current_goal_distance)",
+    "distance": "3D Euclidean distance between agent and one explicitly fixed target instance; no switching among instances",
+    "clip": null,
+    "visibility_suppression": false,
+    "horizon_extra_penalty": 0.0,
+    "stop_success": "Explicit Stop; fixed target visible according to simulator metadata and agent-target distance<=1.0m",
+    "failure_stop": "Terminate with ordinary step penalty/progress; no added terminal bonus",
+    "original_paper_constants_preserved": [
+      "success_reward=100",
+      "step_penalty=-1"
+    ],
+    "newly_explicit_implementation_choices": [
+      "distance coefficient",
+      "3D metric",
+      "visibility predicate",
+      "action increments",
+      "failure/horizon conventions"
+    ],
+    "status": "Prepared shared specification. Not the recovered historical reward and not yet fully qualified in the legacy runtime."
+  },
+  "comparisons": {
+    "main": [
+      "Env",
+      "Geo",
+      "VLM-SP-Rew"
+    ],
+    "coefficient_ablation": [
+      0,
+      0.5,
+      1,
+      2
+    ],
+    "reuse_zero_and_one": true,
+    "geometry_control": "Build adjacency from actual simulator-reachable local edges on the same sampled points. Compute hops to the same fixed target, apply identical original distance bands and sign/region reward; use true simulator visibility for the visibility branch. No VLM output.",
+    "geometry_scope": "Full semantic graph/visibility-field pipeline versus a simulator-derived geometric field under matched information types; not a label-only causal ablation.",
+    "additional_diagnostics": []
+  },
+  "statistics": {
+    "metrics": [
+      "SR",
+      "SPL"
+    ],
+    "mean_and_sample_SD_across_fitted_seeds": true,
+    "per_pair_outcomes": true,
+    "paired_house_bootstrap_required": false,
+    "SPL_reference": "Actual navigable shortest path to the same target and success region; omit unsupported SPL, never replace with action count or straight-line heuristic."
+  },
+  "actual_new_supplementary_navigation_runs": 0,
+  "actual_new_annotation_calls": 0,
+  "engineering_only": {
+    "passed_checks": 72,
+    "source_HEAD": "3a0d769630dbc039425405a41b61728d06c04376",
+    "full_native_runtime_qualification": false,
+    "RoboTHOR_adapter_qualified": false,
+    "R2R_adapter_qualified": false,
+    "real_annotation_cache_complete": false
+  }
+}

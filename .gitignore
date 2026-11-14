@@ -1,0 +1,13 @@
+.env
+.env.*
+__pycache__/
+*.pyc
+.venv*/
+logdir/
+artifacts/
+api_audit/
+*.ckpt
+*.pt
+*.pth
+*.npz
+*.npy

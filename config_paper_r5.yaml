@@ -1,0 +1,32 @@
+# Explicit original-manuscript field profile; not a reproduction of old results.
+openai_api_key: ''
+vlm_sp_rew_params:
+  N: 50
+  d_min: 1.0
+  tau_room: 0.3
+  delta_vis: 2
+  delta_novis: 5
+  alpha_k:
+  - 5
+  - 4
+  - 3
+  beta_k:
+  - 2
+  - 1
+  - 0
+  - -1
+  K_vis: 3
+  tau: 3
+  w_hi: 1.0
+  w_lo: 0.5
+  r_up: 1.0
+  r_down: -1.0
+  beta_tail_step: -1
+stage_defaults:
+  target_object: HousePlant
+  target_image: goal.jpg
+  analysis_dir: procthor_analysis_house1
+  graph_max_distance: 1.5
+  value_min_distance: 1.0
+  collection_output_dir: procthor_scene_views
+method_contract: original_manuscript_r5

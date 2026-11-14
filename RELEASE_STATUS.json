@@ -1,0 +1,14 @@
+{
+  "version": "v0.6.0-r6",
+  "UTC": "2026-11-14T12:16:38.187342+00:00",
+  "upstream_recovered_source_HEAD": "3a0d769630dbc039425405a41b61728d06c04376",
+  "code_license": "MIT with third-party notices",
+  "source_scope": "Recovered demonstration and partial original-paper field reconstruction",
+  "actual_navigation_runs": 0,
+  "actual_new_VLM_calls": 0,
+  "raw_empirical_artifacts_included": false,
+  "populated_scene_rows": 0,
+  "full_native_runtime_qualified": false,
+  "engineering_CPU_checks": 72,
+  "engineering_checks_are_synthetic": true
+}
