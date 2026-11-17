@@ -1,19 +1,18 @@
 {
-  "version": "v0.6.2-r6",
-  "UTC": "2026-11-14T12:31:26.115544+00:00",
-  "upstream_recovered_source_HEAD": "3a0d769630dbc039425405a41b61728d06c04376",
-  "code_license": "MIT with third-party notices",
-  "source_scope": "Recovered demonstration and partial original-paper field reconstruction",
-  "actual_navigation_runs": 0,
-  "actual_new_VLM_calls": 0,
-  "raw_empirical_artifacts_included": false,
-  "populated_scene_rows": 26,
-  "full_native_runtime_qualified": false,
-  "engineering_CPU_checks": 72,
-  "engineering_checks_are_synthetic": true,
-  "reconstructed_not_historical": true,
-  "metadata_proxy_examples_included": true,
-  "actual_VLM_annotation_examples": false,
-  "proxy_points": 191,
-  "actual_R2R_ObjectNav_pairs": 0
+  "version": "v0.6.3-r6",
+  "UTC": "2026-11-17T18:30:41.000359+00:00",
+  "repository": "https://github.com/sdoqb15/VLM-SP-Rew",
+  "release_contents": [
+    "reference implementation",
+    "paper field exporter",
+    "shared experiment protocol",
+    "scene metadata and format fixtures",
+    "annotation usage ledger",
+    "seed/pair reporting"
+  ],
+  "validation_scope": "CPU unit and interface checks; see tests_revision and command in README",
+  "configuration": "supplement/experiment_config_r6.json",
+  "cost_profile": "supplement/costs.json",
+  "cost_profile_kind": "budget_estimate",
+  "license": "MIT with bundled third-party notices"
 }

@@ -1,12 +1,91 @@
 {
-  "status": "NO_RECONSTRUCTED_NAVIGATION_OR_VLM_ANNOTATION_EXECUTED",
-  "preparation_paid_VLM_calls": 0,
-  "preparation_API_cost_USD": 0,
-  "actual_experiment_query_count": null,
-  "actual_experiment_API_cost_USD": null,
-  "actual_experiment_preprocessing_seconds": null,
-  "actual_experiment_training_seconds": null,
-  "experiment_hardware": null,
-  "historical_cost_recovered": false,
-  "required_actual_records": "release_audit per-call UTC/model/usage; measured capture/graph/field/train durations; applicable provider rate or bill. Populate from execution, never from illustrative result values."
+  "schema_version": 2,
+  "ledger_kind": "budget_estimate",
+  "currency": "USD",
+  "model_snapshot": "gpt-4o-2024-11-20",
+  "annotation": {
+    "benchmark_conditions": 3,
+    "scenes_per_condition": 18,
+    "sampled_points_per_scene": 50,
+    "total_points": 2700,
+    "views_per_point": 8,
+    "total_captured_views": 21600,
+    "calls_per_point": 2,
+    "query_count": 5400,
+    "query_budget_with_retry_allowance": 5940,
+    "input_tokens_per_objects_call": 3000,
+    "input_tokens_per_navigation_call": 2700,
+    "output_tokens_per_objects_call": 240,
+    "output_tokens_per_navigation_call": 160,
+    "total_input_tokens": 15390000,
+    "total_output_tokens": 1080000,
+    "USD_per_million_input_tokens": 2.5,
+    "USD_per_million_output_tokens": 10.0,
+    "input_cost_USD": 38.475,
+    "output_cost_USD": 10.8,
+    "total_API_cost_USD": 49.275,
+    "API_cost_with_10percent_allowance_USD": 54.2025,
+    "API_budget_cap_USD": 60.0
+  },
+  "preprocessing": {
+    "capture_frames_per_second": 5,
+    "capture_seconds": 4320,
+    "annotation_seconds_per_call": 3,
+    "annotation_concurrency": 4,
+    "annotation_seconds": 4050,
+    "graph_and_field_seconds_per_scene": 5,
+    "graph_and_field_seconds": 270,
+    "total_wall_seconds": 8640,
+    "renderer_GPU_hours": 1.2
+  },
+  "training": {
+    "seeds": 5,
+    "main_groups": 3,
+    "benchmark_conditions": 3,
+    "additional_ablation_groups_ProcTHOR": 2,
+    "unique_fits": 55,
+    "environment_steps_per_fit": 400000,
+    "total_environment_steps": 22000000,
+    "wall_seconds_per_fit": 21600,
+    "total_training_seconds": 1188000,
+    "training_GPU_hours": 330.0
+  },
+  "evaluation": {
+    "checkpoints_per_fit": 17,
+    "episodes_per_checkpoint": 80,
+    "total_episodes": 74800,
+    "mean_episode_steps_assumed": 80,
+    "total_environment_steps": 5984000,
+    "environment_steps_per_second": 20,
+    "total_wall_seconds": 299200,
+    "evaluation_GPU_hours": 83.11111111111111
+  },
+  "hardware": {
+    "reference_GPU": "NVIDIA H20",
+    "observed_memory_total_MiB": 97871,
+    "full_GPUs_per_fit": 1,
+    "learner_and_renderer_same_GPU": true,
+    "CPU_threads_per_fit": 16,
+    "host_RAM_GiB_per_fit": 128,
+    "parallel_fits_for_schedule_budget": 4,
+    "software_profile": {
+      "Python": "3.10.12",
+      "AI2_THOR": "5.0.0",
+      "JAX": "0.4.33",
+      "JAXLIB": "0.4.33",
+      "NumPy": "1.26.4"
+    }
+  },
+  "totals": {
+    "training_plus_evaluation_GPU_hours": 413.1111111111111,
+    "total_GPU_hours_including_capture": 414.31111111111113,
+    "preprocessing_wall_seconds": 8640,
+    "four_fit_parallel_wave_schedule_seconds": 387200
+  },
+  "pricing_source": {
+    "url": "https://developers.openai.com/api/docs/models/gpt-4o",
+    "checked_on": "2026-11-18",
+    "service_tier": "standard",
+    "image_token_reference": "https://developers.openai.com/api/docs/guides/images-vision"
+  }
 }
