@@ -2,23 +2,21 @@
 
 Official project repository for **VLM-SP-Rew: Scene-Preprocessed VLM-Guided Reward Shaping for Model-Based Reinforcement Learning in Robotic Indoor Navigation**.
 
-The implementation moves VLM inference into scene preprocessing. An annotation/graph/value-field pipeline supplies the training reward; the deployed navigation policy uses its visual observations and recurrent history.
+The implementation performs VLM annotation during scene preprocessing, constructs a graph and semantic value field, and supplies field-based rewards during model-based RL training. The deployed actor uses RGB observations and recurrent history.
 
-## Repository structure
+## Repository layout
 
-- `collection.py`, `vlm_annotation.py`: view collection and annotation requests.
-- Graph, room and path utilities: scene graph construction and state-to-value lookup.
-- `paper_contract_r5.py`, `config_paper_r5.yaml`, `export_annotation_field.py`: original-paper field equations and export profile.
-- `dreamerv3/`, `embodied/`: navigation learning implementation and environment interfaces.
-- `supplement/experiment_config_r6.json`: shared comparison protocol, five seeds,400k environment-step ceiling,25k evaluation intervals,8/2/8 scene quotas.
-- `supplement/costs.json`: query and compute budget, token rates, hardware reference and accounting formulas.
-- `supplement/scene_goal_manifest.csv`: scene/target metadata; `supplement/metadata_proxy_examples/`: metadata-derived format fixtures.
-- `release_audit.py`: per-request model/date/image-hash/response/token-use ledger.
-- `report_seed_pair_results.py`: matched per-seed and per-pair SR/SPL exports.
+- collection.py, vlm_annotation.py: image capture and annotation requests.
+- Graph, room and shortest-path utilities: graph construction and state-to-value lookup.
+- paper_contract_r5.py, config_paper_r5.yaml, export_annotation_field.py: paper field equations and export interface.
+- dreamerv3/, embodied/, revised_env.py: learner and environment interfaces.
+- supplement/experiment_config_r6.json: shared seeds, rewards, field settings and checkpoints.
+- supplement/scene_goal_manifest.csv: scene, target and start metadata.
+- supplement/costs.json: query workload and end-to-end cost-accounting definitions.
+- release_audit.py: request date/model, image hashes, response and provider token-use recording.
+- report_seed_pair_results.py: per-seed and per-pair SR/SPL aggregation from episode records.
 
 ## Installation and checks
-
-Reference Python3.10.12 environment and pinned dependencies:
 
 ```sh
 python -m venv .venv
@@ -27,31 +25,22 @@ python -m pip install -r requirements_cpu_validation_RESOLVED.txt
 TMPDIR=/path/on/large-disk/tmp python -m unittest discover -s tests_revision -v
 ```
 
-The checks cover annotation caching, reward and field calculations, export schemas, environment-interface contracts and seed/pair aggregation. The harness reserves110GiB for operational storage.
+The checks cover reward/field calculations, annotation caching, exports, environment-interface contracts and statistical aggregation.
 
-## Configuration profiles
+## Configuration and execution
 
-The legacy demonstration frontend uses its existing96-pixel/goal-channel observation profile. `--paper-contract --config config_paper_r5.yaml` selects the paper's graph/value-field exporter. The R6 JSON specifies the shared300-pixel RGB-only experimental protocol; select the corresponding environment profile rather than mixing observation interfaces.
-
-## Annotation and field export
+The paper configuration uses 300-pixel RGB observations. The legacy demonstration frontend has a separate observation profile; select the matching environment configuration. The field exporter accepts --paper-contract --config config_paper_r5.yaml.
 
 ```sh
 python vlm_annotation.py --help
 python export_annotation_field.py --help
-```
-
-The annotation profile pins `gpt-4o-2024-11-20`. Provide credentials through `OPENAI_API_KEY`; execution requires explicit enablement and a positive call budget. Calls retain the requested/returned model, UTC timestamp, ordered image hashes, response and usage. The online reward loop requires no VLM calls.
-
-## Results and accounting
-
-```sh
 python report_seed_pair_results.py --input artifacts/runs/episodes.csv --out artifacts/results --checkpoint-steps 400000
 ```
 
-Input columns are `record_kind,episode_id,benchmark,group,seed,pair_id,checkpoint_steps,success,spl`. The exporter checks binary success, valid SPL, duplicate IDs, matched seeds and balanced pair counts. It writes per-seed, per-pair-seed, per-pair and aggregate CSVs using sample SD across fitted seeds, retaining the input record kind.
+Provide annotation credentials through OPENAI_API_KEY. Annotation execution requires explicit enablement, a dated model and a positive call limit. Each request stores its actual input/output model identifiers, UTC, image hashes, response and provider usage. The reward loop does not require online VLM calls.
 
-Store run-derived artifacts under `artifacts/`: scene manifests, annotation request/response ledgers, graphs, value fields, per-episode navigation records and measured cost logs. The supplied cost ledger is a budget profile; per-run accounting uses observed usage and wall time.
+Run records contain record_kind, episode_id, benchmark, group, seed, pair_id, checkpoint_steps, success and spl. The reporter checks binary success, valid SPL, duplicate episodes, matched seeds and pair counts; it computes sample SD across fitted seeds. Cost accounting includes capture, annotation, graph/field construction, learning and evaluation.
 
 ## License
 
-Project code is MIT-licensed. Bundled Dreamer code retains its third-party notice; scene assets and external model weights retain their original licenses.
+Project code is MIT-licensed. Bundled Dreamer code retains its notice; external scene assets and model weights retain their respective licenses.

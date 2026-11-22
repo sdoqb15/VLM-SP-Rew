@@ -1,27 +1,27 @@
-case_id,benchmark,allocation,source_split,scene_id,goal_category,goal_instance_id,start_x,start_y,start_z,start_yaw,room_count,source_revision,metadata_status,historical_original
-R6-ROB-01,RoboTHOR,representative,train,FloorPlan_Train1_1,HousePlant,,2.5,0.9009997248649597,-4.5,300,,,OFFICIAL_EPISODE_METADATA_VERIFIED; new rendering/annotation not performed,False
-R6-ROB-02,RoboTHOR,representative,train,FloorPlan_Train2_1,HousePlant,,3.5,0.9009996652603149,-4.25,90,,,OFFICIAL_EPISODE_METADATA_VERIFIED; new rendering/annotation not performed,False
-R6-ROB-03,RoboTHOR,representative,train,FloorPlan_Train3_1,HousePlant,,4.25,0.9009996652603149,-4.5,300,,,OFFICIAL_EPISODE_METADATA_VERIFIED; new rendering/annotation not performed,False
-R6-ROB-04,RoboTHOR,representative,train,FloorPlan_Train4_1,HousePlant,,8.5,0.9009996652603149,-3.0,330,,,OFFICIAL_EPISODE_METADATA_VERIFIED; new rendering/annotation not performed,False
-R6-PROC-train-3,ProcTHOR-10K,representative,train,ProcTHOR-10K/train/3,HousePlant,HousePlant|surface|6|29,3.25,0.95,5.0,90,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-4,ProcTHOR-10K,representative,train,ProcTHOR-10K/train/4,HousePlant,HousePlant|7|2|0,9.0,0.95,11.0,270,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-7,ProcTHOR-10K,representative,train,ProcTHOR-10K/train/7,HousePlant,HousePlant|6|2|0,1.75,0.95,2.75,270,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-15,ProcTHOR-10K,representative,train,ProcTHOR-10K/train/15,HousePlant,HousePlant|surface|6|29,9.25,0.95,2.75,90,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-18,ProcTHOR-10K,train,train,ProcTHOR-10K/train/18,HousePlant,HousePlant|7|2|0,3.0,0.95,3.0,90,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-35,ProcTHOR-10K,train,train,ProcTHOR-10K/train/35,HousePlant,HousePlant|4|5|0,2.0,0.95,3.75,0,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-48,ProcTHOR-10K,train,train,ProcTHOR-10K/train/48,HousePlant,HousePlant|6|4|0,8.75,0.95,2.25,270,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-56,ProcTHOR-10K,train,train,ProcTHOR-10K/train/56,HousePlant,HousePlant|surface|4|18,7.5,0.95,4.75,270,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-59,ProcTHOR-10K,train,train,ProcTHOR-10K/train/59,HousePlant,HousePlant|4|3|0,2.75,0.95,6.25,90,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-67,ProcTHOR-10K,train,train,ProcTHOR-10K/train/67,HousePlant,HousePlant|7|4|0,1.75,0.95,7.75,180,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-69,ProcTHOR-10K,train,train,ProcTHOR-10K/train/69,HousePlant,HousePlant|surface|6|19,6.5,0.95,4.5,90,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-train-73,ProcTHOR-10K,train,train,ProcTHOR-10K/train/73,HousePlant,HousePlant|4|2|0,7.0,0.95,6.5,90,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-4,ProcTHOR-10K,development,val,ProcTHOR-10K/val/4,HousePlant,HousePlant|4|3|0,2.75,0.95,11.25,180,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-5,ProcTHOR-10K,development,val,ProcTHOR-10K/val/5,HousePlant,HousePlant|4|2|0,7.25,0.95,3.25,90,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-10,ProcTHOR-10K,test,val,ProcTHOR-10K/val/10,HousePlant,HousePlant|4|4|0,8.5,0.95,4.75,180,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-13,ProcTHOR-10K,test,val,ProcTHOR-10K/val/13,HousePlant,HousePlant|7|2|0,6.5,0.95,4.75,180,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-18,ProcTHOR-10K,test,val,ProcTHOR-10K/val/18,HousePlant,HousePlant|7|3|0,1.75,0.95,6.5,180,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-21,ProcTHOR-10K,test,val,ProcTHOR-10K/val/21,HousePlant,HousePlant|6|2|0,3.75,0.95,2.75,180,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-27,ProcTHOR-10K,test,val,ProcTHOR-10K/val/27,HousePlant,HousePlant|6|3|0,7.5,0.95,8.0,0,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-36,ProcTHOR-10K,test,val,ProcTHOR-10K/val/36,HousePlant,HousePlant|surface|4|4,1.5,0.95,3.0,270,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-39,ProcTHOR-10K,test,val,ProcTHOR-10K/val/39,HousePlant,HousePlant|surface|4|5,5.0,0.95,3.0,270,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
-R6-PROC-val-45,ProcTHOR-10K,test,val,ProcTHOR-10K/val/45,HousePlant,HousePlant|7|2|0,5.75,0.95,3.25,270,4,439193522244720b86d8c81cde2e51e3a4d150cf,ACTUAL_OFFICIAL_HOUSE_AND_GOAL_METADATA_VERIFIED; new native reachability/rendering/annotation not performed,False
+case_id,benchmark,allocation,source_split,scene_id,goal_category,goal_instance_id,start_x,start_y,start_z,start_yaw,room_count,source_revision
+ROB-01,RoboTHOR,representative,train,FloorPlan_Train1_1,HousePlant,,2.5,0.9009997248649597,-4.5,300,,
+ROB-02,RoboTHOR,representative,train,FloorPlan_Train2_1,HousePlant,,3.5,0.9009996652603149,-4.25,90,,
+ROB-03,RoboTHOR,representative,train,FloorPlan_Train3_1,HousePlant,,4.25,0.9009996652603149,-4.5,300,,
+ROB-04,RoboTHOR,representative,train,FloorPlan_Train4_1,HousePlant,,8.5,0.9009996652603149,-3.0,330,,
+PROC-train-3,ProcTHOR-10K,representative,train,ProcTHOR-10K/train/3,HousePlant,HousePlant|surface|6|29,3.25,0.95,5.0,90,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-4,ProcTHOR-10K,representative,train,ProcTHOR-10K/train/4,HousePlant,HousePlant|7|2|0,9.0,0.95,11.0,270,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-7,ProcTHOR-10K,representative,train,ProcTHOR-10K/train/7,HousePlant,HousePlant|6|2|0,1.75,0.95,2.75,270,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-15,ProcTHOR-10K,representative,train,ProcTHOR-10K/train/15,HousePlant,HousePlant|surface|6|29,9.25,0.95,2.75,90,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-18,ProcTHOR-10K,train,train,ProcTHOR-10K/train/18,HousePlant,HousePlant|7|2|0,3.0,0.95,3.0,90,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-35,ProcTHOR-10K,train,train,ProcTHOR-10K/train/35,HousePlant,HousePlant|4|5|0,2.0,0.95,3.75,0,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-48,ProcTHOR-10K,train,train,ProcTHOR-10K/train/48,HousePlant,HousePlant|6|4|0,8.75,0.95,2.25,270,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-56,ProcTHOR-10K,train,train,ProcTHOR-10K/train/56,HousePlant,HousePlant|surface|4|18,7.5,0.95,4.75,270,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-59,ProcTHOR-10K,train,train,ProcTHOR-10K/train/59,HousePlant,HousePlant|4|3|0,2.75,0.95,6.25,90,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-67,ProcTHOR-10K,train,train,ProcTHOR-10K/train/67,HousePlant,HousePlant|7|4|0,1.75,0.95,7.75,180,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-69,ProcTHOR-10K,train,train,ProcTHOR-10K/train/69,HousePlant,HousePlant|surface|6|19,6.5,0.95,4.5,90,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-train-73,ProcTHOR-10K,train,train,ProcTHOR-10K/train/73,HousePlant,HousePlant|4|2|0,7.0,0.95,6.5,90,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-4,ProcTHOR-10K,development,val,ProcTHOR-10K/val/4,HousePlant,HousePlant|4|3|0,2.75,0.95,11.25,180,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-5,ProcTHOR-10K,development,val,ProcTHOR-10K/val/5,HousePlant,HousePlant|4|2|0,7.25,0.95,3.25,90,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-10,ProcTHOR-10K,test,val,ProcTHOR-10K/val/10,HousePlant,HousePlant|4|4|0,8.5,0.95,4.75,180,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-13,ProcTHOR-10K,test,val,ProcTHOR-10K/val/13,HousePlant,HousePlant|7|2|0,6.5,0.95,4.75,180,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-18,ProcTHOR-10K,test,val,ProcTHOR-10K/val/18,HousePlant,HousePlant|7|3|0,1.75,0.95,6.5,180,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-21,ProcTHOR-10K,test,val,ProcTHOR-10K/val/21,HousePlant,HousePlant|6|2|0,3.75,0.95,2.75,180,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-27,ProcTHOR-10K,test,val,ProcTHOR-10K/val/27,HousePlant,HousePlant|6|3|0,7.5,0.95,8.0,0,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-36,ProcTHOR-10K,test,val,ProcTHOR-10K/val/36,HousePlant,HousePlant|surface|4|4,1.5,0.95,3.0,270,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-39,ProcTHOR-10K,test,val,ProcTHOR-10K/val/39,HousePlant,HousePlant|surface|4|5,5.0,0.95,3.0,270,4,439193522244720b86d8c81cde2e51e3a4d150cf
+PROC-val-45,ProcTHOR-10K,test,val,ProcTHOR-10K/val/45,HousePlant,HousePlant|7|2|0,5.75,0.95,3.25,270,4,439193522244720b86d8c81cde2e51e3a4d150cf

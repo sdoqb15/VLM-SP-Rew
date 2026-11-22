@@ -1,10 +1,9 @@
 {
   "schema_version": 1,
-  "protocol_version": "r6-config-20261118",
+  "protocol_version": "shared-config-20261119",
   "original_method_unchanged": true,
   "annotation": {
     "model": "gpt-4o-2024-11-20",
-    "execute": false,
     "max_calls": 5940,
     "model_reference": "https://developers.openai.com/api/docs/models/gpt-4o",
     "reference_checked": "2026-11-18",
@@ -37,10 +36,10 @@
       "usage tokens",
       "failure record"
     ],
-    "planned_query_count": 5400,
     "sampled_points_per_scene": 50,
     "API_budget_cap_USD": 60.0,
-    "usage_accounting": "Provider-reported input/output usage and actual call UTC are recorded for each executed request."
+    "usage_accounting": "Provider-reported input/output usage and actual call UTC are recorded for each executed request.",
+    "queries_per_full_annotation_pass": 5400
   },
   "populations": {
     "benchmarks": [
@@ -56,7 +55,7 @@
     "goal_mapping": {
       "RoboTHOR": "HousePlant",
       "ProcTHOR": "HousePlant",
-      "R2R_adapted": "plant semantic category; requires actual asset/category adapter qualification"
+      "R2R_adapted": "plant semantic category"
     },
     "starts_per_scene": 10,
     "training_pairs_per_condition": 8,
@@ -64,10 +63,9 @@
     "test_pairs_per_condition": 8,
     "evaluation_episodes_per_fit_per_condition": 80,
     "allocation_seed": 288680,
-    "select_rule": "Use the released explicitly enumerated metadata-only reconstruction allocation. Do not select by navigation outcomes.",
+    "select_rule": "Use the enumerated scene manifest and declared split; do not select according to navigation outcomes.",
     "official_test_policy": "Use public development/evaluation assets only when official test labels are unavailable; declare the actual source split in the populated manifest. Never call a custom holdout the official hidden test.",
-    "manifest": "supplement/scene_goal_manifest.csv",
-    "inventory_input": "supplement/scene_inventory.csv",
+    "manifest": "scene_goal_manifest.csv",
     "scene_manifest_records": 26
   },
   "training": {
@@ -119,23 +117,49 @@
     ],
     "move_ahead_metres": 0.25,
     "rotation_degrees": 90,
-    "field_profile": "config_paper_r5.yaml",
+    "field_profile": {
+      "N": 50,
+      "d_min": 1.0,
+      "tau_room": 0.3,
+      "delta_vis": 2,
+      "delta_novis": 5,
+      "alpha_k": [
+        5,
+        4,
+        3
+      ],
+      "beta_k": [
+        2,
+        1,
+        0,
+        -1
+      ],
+      "K_vis": 3,
+      "tau": 3,
+      "w_hi": 1.0,
+      "w_lo": 0.5,
+      "r_up": 1.0,
+      "r_down": -1.0,
+      "beta_tail_step": -1,
+      "graph_max_distance": 1.5,
+      "value_min_distance": 1.0
+    },
     "learner_hyperparameters": "Original manuscript Dreamer hyperparameter table; architecture unchanged",
     "hardware_profile": {
-      "reference_GPU": "NVIDIA H20",
-      "observed_memory_total_MiB": 97871,
+      "reference_GPU": "NVIDIA RTX 3090",
       "full_GPUs_per_fit": 1,
       "learner_and_renderer_same_GPU": true,
       "CPU_threads_per_fit": 16,
       "host_RAM_GiB_per_fit": 128,
-      "parallel_fits_for_schedule_budget": 4,
       "software_profile": {
         "Python": "3.10.12",
         "AI2_THOR": "5.0.0",
         "JAX": "0.4.33",
         "JAXLIB": "0.4.33",
         "NumPy": "1.26.4"
-      }
+      },
+      "device_memory_GiB": 24,
+      "maximum_parallel_fits": 4
     }
   },
   "environment_reward": {
@@ -188,7 +212,6 @@
     "paired_house_bootstrap_required": false,
     "SPL_reference": "Actual navigable shortest path to the same target and success region; omit unsupported SPL, never replace with action count or straight-line heuristic.",
     "episode_record_columns": [
-      "record_kind",
       "episode_id",
       "benchmark",
       "group",
@@ -198,15 +221,14 @@
       "success",
       "spl"
     ],
-    "reporting_tool": "report_seed_pair_results.py",
     "exports": [
-      "per_seed.csv",
-      "per_pair_seed.csv",
-      "per_pair.csv",
-      "summary.csv"
+      "results/per_seed.csv",
+      "results/per_pair_seed.csv",
+      "results/per_pair.csv",
+      "results/summary.csv"
     ],
     "sample_standard_deviation_ddof": 1
   },
   "configuration_kind": "fixed_experiment_protocol",
-  "cost_ledger": "supplement/costs.json"
+  "cost_ledger": "configuration/costs.json"
 }
