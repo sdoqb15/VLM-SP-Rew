@@ -25,7 +25,7 @@ def load_api_key():
     return os.environ.get("OPENAI_API_KEY")
 
 
-# No client is created on import. Newly executed calls require a pinned snapshot and budget.
+# Annotation requests use an explicitly selected model snapshot and call limit.
 
 
 def encode_image(image_path):
@@ -185,7 +185,7 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(description='Analyze ProcTHOR scene views (from images)')
-    parser.add_argument('--execute-api', action='store_true', help='Execute newly budgeted annotation calls; default is offline planning only')
+    parser.add_argument('--execute-api', action='store_true', help='Enable annotation API requests within the configured call limit')
     parser.add_argument('--model', default=None, help='Actual dated API model snapshot; never guess a historical version')
     parser.add_argument('--max-api-calls', type=int, default=0, help='Hard limit on newly executed calls')
     parser.add_argument('--config', type=str, default=str(Path(__file__).parent / 'config.yaml'),

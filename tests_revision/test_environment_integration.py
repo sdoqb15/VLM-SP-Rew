@@ -1,4 +1,4 @@
-"""Integration tests use clearly synthetic houses and a fake controller, never scientific outcomes."""
+"""Environment-interface tests using generated scene data and a test controller."""
 from pathlib import Path
 import copy, hashlib, json, os, tempfile, unittest
 from unittest.mock import patch

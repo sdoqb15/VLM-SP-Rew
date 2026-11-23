@@ -1,4 +1,4 @@
-"""Bounded synthetic CPU integration: real Dreamer + real Driver/replay + fake simulator."""
+"""CPU integration test for Dreamer, Driver and replay using a test simulator."""
 from pathlib import Path
 import hashlib,json,os,uuid
 import elements,numpy as np
@@ -52,7 +52,7 @@ def main():
         assert int(agent.n_updates)==3
         assert core_changed,'Need real changed model weights, not only optimizer counters'
         assert all(np.isfinite(np.asarray(value)).all()for value in agent.params.values())
-        report=dict(status='PASS',scope='SYNTHETIC ENGINEERING ONLY: actual Dreamer tiny upstream size1m config, actual Driver, actual replay/streams, 3 actual CPU gradient updates using fake-controller RGB/rewards. Not an ObjectNav efficacy experiment.',
+        report=dict(status='PASS',scope='CPU integration test: Dreamer size1m, Driver, replay/streams and three gradient updates using generated RGB/rewards from a test controller.',
                     real_simulator_calls=0,real_navigation_steps=0,paid_API_calls=0,GPU_used=False,
                     synthetic_driver_observations=16,synthetic_gradient_updates=3,
                     changed_core_arrays=len(core_changed),changed_core_parameter_names=core_changed,

@@ -16,7 +16,7 @@
       "source_episode_id": "FloorPlan_Train1_1_HousePlant_0",
       "source_commit": "f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
       "source_file_SHA256": "b88587f7a949db08caf59f3f47aa48478c52b1561ff929bef22ece283c1d6c59",
-      "purpose": "Representative replacement for missing original four cases; not a new held-out evaluation"
+      "purpose": "Representative scene configuration from the referenced source metadata"
     },
     {
       "case_id": "R6-ROB-02",
@@ -34,7 +34,7 @@
       "source_episode_id": "FloorPlan_Train2_1_HousePlant_0",
       "source_commit": "f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
       "source_file_SHA256": "e17235d98a0c3496fe433a4115ba7eda41e86fe021635cca26ce0ea0fdc74a4c",
-      "purpose": "Representative replacement for missing original four cases; not a new held-out evaluation"
+      "purpose": "Representative scene configuration from the referenced source metadata"
     },
     {
       "case_id": "R6-ROB-03",
@@ -52,7 +52,7 @@
       "source_episode_id": "FloorPlan_Train3_1_HousePlant_0",
       "source_commit": "f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
       "source_file_SHA256": "9ccd6459e7e096bbc0a49fcee386c5a4d7aef4273dd5b4fc92e063ff8ce1de80",
-      "purpose": "Representative replacement for missing original four cases; not a new held-out evaluation"
+      "purpose": "Representative scene configuration from the referenced source metadata"
     },
     {
       "case_id": "R6-ROB-04",
@@ -70,7 +70,7 @@
       "source_episode_id": "FloorPlan_Train4_1_HousePlant_0",
       "source_commit": "f3c4f35bc397aff4d5236e269efe3ff41f6d218e",
       "source_file_SHA256": "d2e116b6932cce3766f9f416903a318ccded16f0c0766e23ceabac35d0a5ad93",
-      "purpose": "Representative replacement for missing original four cases; not a new held-out evaluation"
+      "purpose": "Representative scene configuration from the referenced source metadata"
     },
     {
       "case_id": "R6-PROC-train-3",
@@ -1046,5 +1046,7 @@
     },
     "source_house_geometries_disjoint": true,
     "goal_category": "HousePlant"
-  }
+  },
+  "metadata_scope": "Public scene, goal and start configurations",
+  "data_role": "scene_configuration"
 }

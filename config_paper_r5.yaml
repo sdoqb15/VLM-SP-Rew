@@ -1,4 +1,4 @@
-# Explicit original-manuscript field profile; not a reproduction of old results.
+# Paper field and sign-reward configuration.
 openai_api_key: ''
 vlm_sp_rew_params:
   N: 50

@@ -12,6 +12,8 @@ The implementation performs VLM annotation during scene preprocessing, construct
 - dreamerv3/, embodied/, revised_env.py: learner and environment interfaces.
 - supplement/experiment_config_r6.json: shared seeds, rewards, field settings and checkpoints.
 - supplement/scene_goal_manifest.csv: scene, target and start metadata.
+- supplement/reconstructed_scene_cases.json: source scene configurations and geometry identifiers.
+- supplement/R2R_scene_candidates.json: R2R source scenes, routes and viewpoints.
 - supplement/costs.json: query workload and end-to-end cost-accounting definitions.
 - release_audit.py: request date/model, image hashes, response and provider token-use recording.
 - report_seed_pair_results.py: per-seed and per-pair SR/SPL aggregation from episode records.
@@ -25,7 +27,7 @@ python -m pip install -r requirements_cpu_validation_RESOLVED.txt
 TMPDIR=/path/on/large-disk/tmp python -m unittest discover -s tests_revision -v
 ```
 
-The checks cover reward/field calculations, annotation caching, exports, environment-interface contracts and statistical aggregation.
+The checks use generated test inputs to validate reward/field calculations, annotation caching, exports, environment-interface contracts and statistical aggregation.
 
 ## Configuration and execution
 

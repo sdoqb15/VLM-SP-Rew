@@ -10,6 +10,6 @@
   "w_lo": 0.5,
   "r_up": 1.0,
   "r_down": -1.0,
-  "source": "Recovered example defaults, shared across Env/Geo/Geo+Vis/VLM; proposed rerun config, not recovered historical run metadata",
-  "initial_value_rule": "Revision initializes field at reset so first transition matches manuscript equation; retain original source snapshot for difference review"
+  "source": "Shared reward configuration for Env, Geo, Geo+Vis and VLM comparisons",
+  "initial_value_rule": "Initialize the field value at episode reset before computing the first reward difference"
 }

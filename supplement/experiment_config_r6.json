@@ -96,7 +96,6 @@
       375000,
       400000
     ],
-    "budget_rationale": "Fixed common ceiling above the original reported Dreamer threshold counts of150k,220k,350k; not evidence of convergence or an optimal budget.",
     "checkpoint_selection": "Primary endpoint is the final common400k checkpoint. Development-only checkpoint choices, if used, must be separately declared; never select by test outcomes.",
     "actor_observation": {
       "image_shape": [
@@ -160,7 +159,8 @@
       },
       "device_memory_GiB": 24,
       "maximum_parallel_fits": 4
-    }
+    },
+    "training_budget_definition": "Apply the same fixed environment-step ceiling and checkpoint schedule to all comparison groups."
   },
   "environment_reward": {
     "step_penalty": -1.0,

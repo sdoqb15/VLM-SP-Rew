@@ -1,4 +1,4 @@
-"""Analytic fixtures for paper/prototype differences; no experimental data."""
+"""Analytic unit tests for the paper field and reward definitions."""
 import copy
 import unittest
 from paper_contract_r5 import PaperParameters, value_from_hops, hops_from_paths, repair_unreachable_hops, select_sample, sign_reward

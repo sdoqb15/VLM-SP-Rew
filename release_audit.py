@@ -1,4 +1,4 @@
-"""Immutable annotation provenance for newly executed calls; offline by default."""
+"""Record annotation requests, provider responses and usage with explicit API enablement."""
 from pathlib import Path
 import os,json,datetime,hashlib,base64,uuid,re,shutil
 OPTIONS=dict(execute=False,model=None,max_calls=0,calls=0);CLIENT=None
@@ -26,7 +26,7 @@ def request_annotation(position_dir,kind,content,max_tokens,temperature):
  def write(name,value):
   p=target/name
   with p.open('x',encoding='utf-8')as f:json.dump(value,f,ensure_ascii=False,indent=2);f.write('\n')
- request=dict(schema_version=1,UTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),kind=kind,requested_model_snapshot=OPTIONS['model'],messages_without_duplicated_image_payload=[dict(role='user',content=messages)],image_payload_hashes=images,max_tokens=max_tokens,temperature=temperature,source='new_annotation_call_not_recovered_historical_output')
+ request=dict(schema_version=1,UTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),kind=kind,requested_model_snapshot=OPTIONS['model'],messages_without_duplicated_image_payload=[dict(role='user',content=messages)],image_payload_hashes=images,max_tokens=max_tokens,temperature=temperature,source='provider_annotation_request')
  write('REQUEST.json',request);OPTIONS['calls']+=1
  try:
   global CLIENT
@@ -39,7 +39,7 @@ def request_annotation(position_dir,kind,content,max_tokens,temperature):
   raw=response.model_dump(mode='json');write('PROVIDER_RESPONSE.json',raw);text=response.choices[0].message.content
   if not isinstance(text,str)or not text.strip():raise ValueError('Empty model text')
   with(target/'RESPONSE_TEXT.txt').open('x',encoding='utf-8')as f:f.write(text)
-  write('COMPLETE.json',dict(UTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),requested_model=OPTIONS['model'],returned_model=raw.get('model'),provider_response_id=raw.get('id'),usage=raw.get('usage'),text_sha256=hashlib.sha256(text.encode()).hexdigest(),no_invented_historical_version=True))
+  write('COMPLETE.json',dict(UTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),requested_model=OPTIONS['model'],returned_model=raw.get('model'),provider_response_id=raw.get('id'),usage=raw.get('usage'),text_sha256=hashlib.sha256(text.encode()).hexdigest(),model_identifier_source='provider_response'))
   return text
  except BaseException as e:
   message=re.sub(r'sk-[A-Za-z0-9_-]+','[redacted]',str(e));write('FAILURE.json',dict(UTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),error_type=type(e).__name__,message=message[:1000],not_automatically_retried=True));raise

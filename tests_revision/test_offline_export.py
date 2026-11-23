@@ -1,4 +1,4 @@
-"""Exporter engineering tests; all images/provider JSON/house geometry below are synthetic."""
+"""Field-export unit tests using generated annotations, images and scene geometry."""
 from pathlib import Path
 import hashlib,json,shutil,tempfile,unittest
 import test_annotation_cache as cachefixtures

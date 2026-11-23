@@ -1,4 +1,4 @@
-"""Opt-in field-pipeline checks on synthetic provider/cache fixtures only."""
+"""Unit tests for the paper field exporter using generated cache inputs."""
 from pathlib import Path
 import json
 import shutil
@@ -31,7 +31,7 @@ class PaperExporterTests(unittest.TestCase):
         self.assertEqual([p['value'] for p in field['points']], [5., 5.])
         self.assertFalse(field['source_integrity_qualified'])
         self.assertTrue(field['synthetic'])
-        self.assertTrue(field['paper_contract']['runtime_observation_reward_and_full_benchmark_qualification_pending'])
+        self.assertEqual(field['paper_contract']['validation_scope'], 'field_export')
         self.assertTrue(complete['no_API_simulator_or_training_calls'])
 
     def test_original_infinite_distance_repair_covers_connected_unreachable_components(self):

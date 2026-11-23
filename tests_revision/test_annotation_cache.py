@@ -1,4 +1,4 @@
-"""Provenance consistency tests use synthetic JPEGs and invented provider JSON marked as fixtures."""
+"""Unit tests for annotation caching using generated images and provider-response test inputs."""
 from pathlib import Path
 import copy,json,tempfile,unittest
 from PIL import Image

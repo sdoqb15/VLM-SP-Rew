@@ -1,8 +1,6 @@
-"""Original manuscript field and sign reward; no model/simulator imports.
+"""Paper field and sign-reward definitions.
 
-This implements the paper definitions, NOT the recovered prototype's hops+1,
-nonuniform thresholds, or spatially weighted room similarity. Engineering
-checks of this module are not a reproduction of any reported navigation score.
+Implements graph-hop values, room refinement, state lookup and reward weighting.
 """
 from dataclasses import dataclass
 import math

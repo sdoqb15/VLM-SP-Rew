@@ -1,4 +1,4 @@
-"""Offline export from an existing real eight-view cache using the recovered graph/value functions."""
+"""Export annotation graphs and semantic value fields from an eight-view cache."""
 from pathlib import Path
 import argparse, collections, hashlib, json, math, shutil, time
 import yaml
@@ -181,14 +181,14 @@ def export_cache(source_cache, scene_path, goal_metadata, goal_reference, config
                      provenance=dict(scene_sha256=sha(scene_raw),goal_metadata_sha256=sha(metadata_raw),
                                      config_sha256=sha(config_raw),input_cache_sha256=sha(json.dumps(audit,sort_keys=True).encode()),
                                      goal_anchor_policy=('one_explicit_fixed_goal_instance' if paper else 'all_declared_matching_instances'),
-                                     not_recovered_historical_dataset=True))
+                                     data_source='annotation_cache'))
         if paper:
             field['method_contract']='original_manuscript_r5'
             field['paper_contract']=dict(d_min=paper.d_min, graph_distance='unweighted hops, NOT hops+1',
                 value_rule='original uniform alpha/beta distance-band equation',
                 room_refinement='Jaccard only, average link, cut1-tau_room within original room labels',
                 repaired_values_do_not_certify_graph_connections=True,
-                runtime_observation_reward_and_full_benchmark_qualification_pending=True)
+                validation_scope='field_export')
             for point in field['points']:
                 point['graph_hops']=point['graph_path_position']
         dump(out/'FIELD.json',field)
@@ -211,8 +211,8 @@ def export_cache(source_cache, scene_path, goal_metadata, goal_reference, config
                                    [p['position']['z']for p in field['points']],
                                    c=[p['value']for p in field['points']],cmap='viridis')
             fig.colorbar(scatter,ax=axes[1],label='sign-shaping field value')
-            fig.suptitle('SYNTHETIC ENGINEERING FIXTURE — NOT EXPERIMENT DATA' if synthetic
-                         else 'Derived cache graph and field; not navigation efficacy')
+            fig.suptitle('Test data: graph and value field' if synthetic
+                         else 'Annotation graph and semantic value field')
             fig.savefig(out/'GRAPH_AND_FIELD.png',dpi=160);fig.savefig(out/'GRAPH_AND_FIELD.pdf')
             plt.close(fig)
         # Fresh input bytes must still match every pre-export source hash.
@@ -228,7 +228,7 @@ def export_cache(source_cache, scene_path, goal_metadata, goal_reference, config
         files=[dict(path=p.relative_to(out).as_posix(),bytes=p.stat().st_size,sha256=sha(p.read_bytes()))
                for p in sorted(out.rglob('*'))if p.is_file()]
         complete=dict(status='COMPLETE',source_integrity_qualified=qualified,
-                      real_navigation_results=False,synthetic=synthetic,files=files,
+                      artifact_type='annotation_graph_value_field_export',synthetic=synthetic,files=files,
                       no_API_simulator_or_training_calls=True,
                       original_source_cache_not_modified=True)
         dump(out/'COMPLETE.json',complete)
