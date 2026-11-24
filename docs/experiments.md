@@ -54,3 +54,5 @@ The paper's broader architecture comparisons use these author implementations:
 - [Dynalang](https://github.com/jlin816/dynalang/tree/5e3b93d4cdf3318537a97faa64a01219b82912a8).
 
 Keep their dependency environments separate from the bundled Dreamer environment. Preserve their model and optimization definitions when adapting the task interface. Scene allocation,300×300 RGB, action space, stop predicate and environment reward are supplied by this project's frozen task contract. Their original multi-goal task samplers, resized image defaults and reward configurations are not interchangeable with the fixed-goal protocol here.
+
+Runnable project entries and source/environment setup are given in the [author-source comparison guide](baselines.md).

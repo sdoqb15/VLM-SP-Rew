@@ -90,3 +90,16 @@ Each evaluation episode additionally carries `spl_reference` with:
 - matching `scene_sha256`, `goal_category`, `start_position`, `start_yaw_degrees`, `success_distance_m: 1.0`.
 
 Retain the native shortest-path/visibility qualification record with the bank. A straight-line target distance, graph-hop count, route endpoint or action count is not a replacement for the ObjectNav SPL denominator.
+
+
+## Native path qualification
+
+```sh
+python -m vlm_sp_rew.qualify_paths --episode-manifest /data/task/bank.json \
+  --data-root /data/task --controller-config /data/task/controller.json \
+  --max-api-calls 10000 --max-seconds 900 --out /data/task/path-qualification
+```
+
+The qualifier checks the fixed target, actual stop visibility and native obstacle-aware paths. THOR uses its complete reachable lattice and allowed yaw/camera states. R2R-adapted uses the native ObjectNav annotated goal-viewpoint convention: each evaluation episode supplies `native_objectnav_goal_region`, a relative path/SHA256 record for a JSON file with matching `scene_sha256`, `goal_instance_ids`, `success_distance_m: 1.0`, `coordinate_frame: Habitat_Y_up`, `reference_kind: native_objectnav_goal_viewpoints`, and its actual `positions`. This source must belong to the adapted object-goal task; the instruction route endpoint is not its replacement. The output records the region convention and source used for the denominator.
+
+Use `path-qualification/bank.json` for evaluation. Retain the native query log, selected path and valid endpoints with the dataset. The input bank is left unchanged. All methods use the same frozen reference bank.

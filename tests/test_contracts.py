@@ -23,7 +23,6 @@ class RewardTests(unittest.TestCase):
  def test_nonfinite_reward_config_invalid(self):
   cfg=config();cfg['tau']=float('nan')
   with self.assertRaises(ValueError):R.SharedReward('vlm',cfg)
- def test_goal_is_one_hot_not_target_coordinate(self):self.assertEqual(R.goal_one_hot('Mug',['HousePlant','Mug']),[0.,1.])
  def test_requested_category_any_visible_instance(self):
   objects=[dict(objectType='Mug',objectId='m1',visible=False,position=dict(x=.1,z=0)),dict(objectType='Mug',objectId='m2',visible=True,position=dict(x=.8,z=0)),dict(objectType='HousePlant',objectId='p',visible=True,position=dict(x=0,z=0))];x=R.requested_goal_state(objects,'Mug',dict(x=0,z=0));self.assertEqual(x['distance'],.1);self.assertEqual(x['eligible_visible_distance'],.8);self.assertEqual(x['goal_instance_ids'],['m1','m2'])
  def test_never_switch_missing_category(self):

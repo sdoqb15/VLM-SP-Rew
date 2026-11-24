@@ -273,6 +273,12 @@ def run_training(args, env_cls, per_episode_callback):
         'fps': 15,
     })
 
+    from vlm_sp_rew.reward import load_episode_bank
+    from vlm_sp_rew.environment import actions_for_benchmark
+    bank=load_episode_bank(args.episode_manifest,args.data_root)
+    benchmark=bank['bank'].get('benchmark','ProcTHOR')
+    config_dict['task_contract']=dict(benchmark=benchmark,actions=list(actions_for_benchmark(benchmark)),
+        goal_vocabulary=bank['goal_vocabulary'],RGB=[300,300,3],goal_channel=False,max_episode_actions=200)
     config = elements.Config(config_dict)
 
     logdir_path = elements.Path(config.logdir)

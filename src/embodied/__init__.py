@@ -9,5 +9,14 @@ except ImportError:
 from .core import *
 
 from . import envs
-from . import jax
 from . import run
+
+
+def __getattr__(name):
+  # Native simulator and external-baseline interfaces do not initialize JAX.
+  if name == 'jax':
+    import importlib
+    value = importlib.import_module('.jax', __name__)
+    globals()['jax'] = value
+    return value
+  raise AttributeError(name)

@@ -2,8 +2,6 @@
 from pathlib import Path
 import copy, hashlib, json, math, os, shutil, time, uuid
 import numpy as np
-import elements
-import embodied
 from vlm_sp_rew.reward import (
     ARMS, require, finite, file_bytes, load_episode_bank, EpisodeSchedule,
     bind_field, SharedReward, requested_goal_state,
@@ -17,15 +15,18 @@ def actions_for_benchmark(benchmark):
     require(benchmark in ('RoboTHOR','ProcTHOR','ProcTHOR-10K','R2R-adapted'), 'Unknown benchmark')
     return R2R_ACTIONS if benchmark == 'R2R-adapted' else ACTIONS
 
-def spaces(vocabulary, benchmark='ProcTHOR'):
+def spaces(vocabulary, benchmark='ProcTHOR', space_type=None):
+    if space_type is None:
+        from elements import Space
+        space_type=Space
     obs = {
-        'image': elements.Space(np.uint8, (300, 300, 3)),
-        'reward': elements.Space(np.float32, ()),
-        'is_first': elements.Space(bool, ()),
-        'is_last': elements.Space(bool, ()),
-        'is_terminal': elements.Space(bool, ()),
+        'image': space_type(np.uint8, (300, 300, 3)),
+        'reward': space_type(np.float32, ()),
+        'is_first': space_type(bool, ()),
+        'is_last': space_type(bool, ()),
+        'is_terminal': space_type(bool, ()),
     }
-    return obs, {'action': elements.Space(np.int32, (), 0, len(actions_for_benchmark(benchmark)))}
+    return obs, {'action': space_type(np.int32, (), 0, len(actions_for_benchmark(benchmark)))}
 
 class FieldLookup:
     """Retain original nearest/previous-room rule; field is trainer-side only."""
@@ -97,7 +98,7 @@ def make_local_controller(spec, run_root):
                           str(Path(self.log_dir) / ('Player-%s.log' % os.getpid()))]
     return LocalController(platform=CloudRendering, **kwargs)
 
-class ObjectNavEnv(embodied.Env):
+class ObjectNavEnv:
     """Fixed requested goal, exact scene/field binding and common four-arm reward."""
     @staticmethod
     def spaces_from_manifest(path, data_root=None):
@@ -107,7 +108,7 @@ class ObjectNavEnv(embodied.Env):
     def __init__(self, episode_manifest, data_root=None, split='train', seed=0,
                  arm='env', shared_reward_config=None, controller_config=None,
                  run_record_root=None, max_steps=200, shuffle=False,
-                 controller_factory=None, allow_synthetic_fixture=False):
+                 controller_factory=None, allow_synthetic_fixture=False, space_type=None):
         require(arm in ARMS, 'Unknown arm')
         require(type(max_steps) is int and max_steps > 0, 'Positive max_steps required')
         self.qualified = load_episode_bank(episode_manifest, data_root)
@@ -121,13 +122,16 @@ class ObjectNavEnv(embodied.Env):
         self.vocabulary = self.qualified['goal_vocabulary']
         self.benchmark = self.qualified['bank'].get('benchmark','ProcTHOR')
         self.actions = actions_for_benchmark(self.benchmark)
-        self._obs_space, self._act_space = spaces(self.vocabulary, self.benchmark)
+        self._obs_space, self._act_space = spaces(self.vocabulary, self.benchmark, space_type)
         require(run_record_root is not None, 'Explicit writable run evidence directory required')
         self.run_root = Path(run_record_root) / ('env-' + uuid.uuid4().hex)
         self.run_root.mkdir(parents=True, exist_ok=False)
         self.allow_synthetic_fixture = allow_synthetic_fixture
         self._guard()
         self.controller_spec = json.loads(Path(controller_config).read_text()) if controller_config else {}
+        if not self.allow_synthetic_fixture:
+            require((self.controller_spec.get('backend')=='habitat') == (self.benchmark=='R2R-adapted'),
+                    'Controller backend must match the benchmark reconstruction type')
         require(controller_factory is None or allow_synthetic_fixture,
                 'Custom controller factory is restricted to explicit engineering tests')
         self.controller = ((controller_factory(self.controller_spec, self.run_root))

@@ -41,6 +41,10 @@ def main():
     config=elements.Config.load(a.config).update(dict(episode_manifest=a.episode_manifest,data_root=a.data_root,
         logdir=str(Path(a.output).parent/'agent'),jax=dict(platform=a.jax_platform,compute_dtype='float32',
             policy_devices=[0],train_devices=[0],prealloc=False,jit=True,debug=False,precompile=False,profiler=False)))
+    q=load_episode_bank(a.episode_manifest,a.data_root)
+    from vlm_sp_rew.environment import actions_for_benchmark
+    expected=dict(benchmark=q['bank'].get('benchmark','ProcTHOR'),actions=list(actions_for_benchmark(q['bank'].get('benchmark','ProcTHOR'))),goal_vocabulary=q['goal_vocabulary'],RGB=[300,300,3],goal_channel=False,max_episode_actions=200)
+    require(json.loads(json.dumps(dict(config.task_contract)))==expected,'Checkpoint fixed-goal or observation/action contract mismatch')
     agent=make_agent(config,ObjectNavEnv)()
     elements.checkpoint.load(a.checkpoint,dict(agent=agent.load))
     q=load_episode_bank(a.episode_manifest,a.data_root)

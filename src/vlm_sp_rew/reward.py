@@ -36,17 +36,22 @@ def floor_identity(scene):
  require(polygons,'Scene cache lacks actual floor geometry; other benchmarks need an explicitly qualified adapter')
  return sha(json.dumps(sorted(polygons),separators=(',',':')).encode())
 
+def validate_scene_backend(scene,benchmark):
+ if benchmark=='RoboTHOR':require(scene.get('backend')=='robothor','RoboTHOR requires a native preset scene descriptor')
+ elif benchmark=='R2R-adapted':require(scene.get('backend')=='habitat','R2R-adapted requires a native Habitat reconstruction descriptor')
+ elif benchmark in ('ProcTHOR','ProcTHOR-10K'):require(scene.get('rooms')and scene.get('backend')not in ('robothor','habitat'),'ProcTHOR requires native house geometry')
+ else:raise ValueError('Unknown benchmark: '+str(benchmark))
+
 def load_episode_bank(path,data_root=None):
- path=Path(path);raw=path.read_bytes();bank=json.loads(raw);root=Path(data_root or path.parent);require(bank.get('schema_version')==1,'schema_version1 required');episodes=bank.get('episodes');require(isinstance(episodes,list)and episodes,'Real frozen episodes required; no empty or placeholder schedule');ids=set();split_scenes=collections.defaultdict(set);vocab=bank.get('goal_vocabulary');require(isinstance(vocab,list)and vocab==sorted(set(vocab))and all(isinstance(x,str)and x for x in vocab),'One shared sorted goal vocabulary required')
+ path=Path(path);raw=path.read_bytes();bank=json.loads(raw);root=Path(data_root or bank.get('artifact_root') or path.parent);require(bank.get('schema_version')==1,'schema_version1 required');episodes=bank.get('episodes');require(isinstance(episodes,list)and episodes,'Real frozen episodes required; no empty or placeholder schedule');ids=set();split_scenes=collections.defaultdict(set);vocab=bank.get('goal_vocabulary');require(isinstance(vocab,list)and vocab==sorted(set(vocab))and all(isinstance(x,str)and x for x in vocab),'One shared sorted goal vocabulary required')
  for e in episodes:
-  ident=e.get('episode_id');require(isinstance(ident,str)and ident not in ids,'Unique episode_id required');ids.add(ident);require(e.get('split')in['train','dev','test'],'Declare train/dev/test purpose separately from official source split');scene=file_bytes(root,e['scene']);require(e.get('scene_identity_sha256')and len(e['scene_identity_sha256'])==64,'Record scene identity/floor geometry SHA; rotated/mirrored identity limits must be stated');require(e['scene_identity_sha256']==floor_identity(json.loads(scene)),'Scene identity does not match cached floor geometry');split_scenes[e['split']].add(e['scene_identity_sha256']);require(e['goal_category']in vocab,'Goal absent from frozen vocabulary');require(isinstance(e.get('goal_instance_ids'),list)and e['goal_instance_ids'],'Retain actual simulator goal instance IDs');require(type(e.get('seed'))is int,'Actual episode seed required');require(set(e.get('start_position',{}))=={'x','y','z'},'Fixed x/y/z start required')
+  ident=e.get('episode_id');require(isinstance(ident,str)and ident not in ids,'Unique episode_id required');ids.add(ident);require(e.get('split')in['train','dev','test'],'Declare train/dev/test purpose separately from official source split');scene=file_bytes(root,e['scene']);scene_data=json.loads(scene)
+  if not bank.get('synthetic',False):validate_scene_backend(scene_data,bank.get('benchmark','ProcTHOR'))
+  require(e.get('scene_identity_sha256')and len(e['scene_identity_sha256'])==64,'Record scene identity/floor geometry SHA; rotated/mirrored identity limits must be stated');require(e['scene_identity_sha256']==floor_identity(json.loads(scene)),'Scene identity does not match cached floor geometry');split_scenes[e['split']].add(e['scene_identity_sha256']);require(e['goal_category']in vocab,'Goal absent from frozen vocabulary');require(isinstance(e.get('goal_instance_ids'),list)and e['goal_instance_ids'],'Retain actual simulator goal instance IDs');require(type(e.get('seed'))is int,'Actual episode seed required');require(set(e.get('start_position',{}))=={'x','y','z'},'Fixed x/y/z start required')
   for k,v in e['start_position'].items():finite(v,'start.'+k)
   finite(e.get('start_yaw_degrees'),'start yaw')
  for a,b in [('train','dev'),('train','test'),('dev','test')]:require(not(split_scenes[a]&split_scenes[b]),'Scene leakage between '+a+' and '+b)
  return dict(bank=bank,root=str(root),manifest_sha256=sha(raw),goal_vocabulary=vocab)
-
-def goal_one_hot(goal,vocabulary):
- require(goal in vocabulary,'Unknown requested goal');return [float(x==goal)for x in vocabulary]
 
 class EpisodeSchedule:
  def __init__(self,qualified,split,seed=0,shuffle=False):

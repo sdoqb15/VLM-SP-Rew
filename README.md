@@ -66,9 +66,11 @@ python -m vlm_sp_rew.geometry --geometry /data/cache/scene01/GEOMETRY.json \
 
 Freeze the field files and place their paths/SHA256 values in the episode bank before training.
 
+Run `python -m vlm_sp_rew.qualify_paths --help` to generate native SPL references for the frozen evaluation starts. The dataset guide specifies the stop-region conventions.
+
 ## Training and evaluation
 
-See the [experiment guide](docs/experiments.md) for field configurations, ablations and cross-scene evaluation.
+See the [experiment guide](docs/experiments.md) for field configurations, ablations and cross-scene evaluation, and the [author-source comparison guide](docs/baselines.md) for EmbCLIP, EmbCLIP-Codebook, R2D2 and Dynalang.
 
 ```sh
 python -m vlm_sp_rew.experiments list
