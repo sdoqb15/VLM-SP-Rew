@@ -1,6 +1,6 @@
 # Native datasets and frozen episode banks
 
-Use native simulator coordinates and fixed object instance identities. Store licensed data and runtime outputs outside the source checkout. Metadata in `examples/scene_goal_manifest.csv` helps locate scenes and source episodes; the runtime consumes the JSON episode bank described below.
+Use native simulator coordinates and fixed object instance identities. Store licensed data and runtime outputs outside the source checkout. The **scene–goal configuration manifest**, `examples/scene_goal_manifest.csv`, organizes scene identifiers, goal categories, split allocations, initial poses and pinned source versions. To execute selected configurations, bind their native scene assets, fixed object instances and field files to the JSON episode bank below. The CSV provides the configuration overview; the JSON bank supplies the runtime bindings and file hashes.
 
 ## Episode bank
 

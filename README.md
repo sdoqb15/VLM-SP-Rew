@@ -36,7 +36,7 @@ Each policy run fixes its goal category and instance allocation. Target coordina
 
 ## Data preparation
 
-The [dataset guide](docs/datasets.md) describes the native scene descriptors and episode-bank schema. `examples/scene_goal_manifest.csv` provides scene/source/start metadata. Store licensed scene assets, model weights, caches and run outputs outside this Git checkout. Provide one frozen episode bank with disjoint train/dev/test scene identities and native target instance IDs.
+`examples/scene_goal_manifest.csv` is the **scene–goal configuration manifest**. It records scene identifiers, goal categories, split allocations, initial positions and orientations, and pinned dataset sources. Use the manifest to select and track scene–goal configurations; the [dataset guide](docs/datasets.md) explains how to bind them to native assets and the JSON episode bank read by the runner. Store licensed scene assets, model weights, caches and run outputs outside this Git checkout. Provide one frozen episode bank with disjoint train/dev/test scene identities and native target instance IDs.
 
 ```sh
 python -m vlm_sp_rew.preprocess \
