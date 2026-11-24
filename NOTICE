@@ -1,5 +1,5 @@
-The dreamerv3/ and embodied/ directories derive from danijar/dreamerv3 with local changes.
-SOURCE_PROVENANCE.json identifies the supplied source files; this repository's commits identify subsequent changes.
+The src/dreamerv3/ and src/embodied/ directories derive from danijar/dreamerv3 with local changes.
+Upstream source: https://github.com/danijar/dreamerv3 . This repository's git history records project modifications.
 Retain third_party_licenses/DreamerV3_MIT.txt. Scene assets and external models retain their respective licenses.
 No license to third-party assets is granted by this repository.
 

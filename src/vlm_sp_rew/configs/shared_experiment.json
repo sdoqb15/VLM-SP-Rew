@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "protocol_version": "shared-config-20261119",
+  "original_method_unchanged": true,
+  "annotation": {
+    "model": "gpt-4o-2024-11-20",
+    "max_calls": 5940,
+    "model_reference": "https://developers.openai.com/api/docs/models/gpt-4o",
+    "reference_checked": "2026-11-18",
+    "views_per_point": 8,
+    "views_yaw_degrees": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "calls_per_point": 2,
+    "temperatures": {
+      "objects_room_visibility": 0.3,
+      "navigability": 0.2
+    },
+    "max_output_tokens": {
+      "objects_room_visibility": 300,
+      "navigability": 200
+    },
+    "auto_capture": [
+      "UTC request time",
+      "requested and returned model",
+      "input image SHA256 and order",
+      "full raw response",
+      "parsed labels",
+      "usage tokens",
+      "failure record"
+    ],
+    "sampled_points_per_scene": 50,
+    "usage_accounting": "Provider-reported input/output usage and actual call UTC are recorded for each executed request.",
+    "queries_per_full_annotation_pass": 5400
+  },
+  "populations": {
+    "benchmarks": [
+      "RoboTHOR",
+      "ProcTHOR",
+      "R2R-adapted ObjectNav"
+    ],
+    "train_scenes_per_condition": 8,
+    "development_scenes_per_condition": 2,
+    "test_scenes_per_condition": 8,
+    "target_category": "HousePlant",
+    "fixed_goal_per_policy_run": true,
+    "goal_mapping": {
+      "RoboTHOR": "HousePlant",
+      "ProcTHOR": "HousePlant",
+      "R2R_adapted": "plant semantic category"
+    },
+    "starts_per_scene": 10,
+    "training_pairs_per_condition": 8,
+    "development_pairs_per_condition": 2,
+    "test_pairs_per_condition": 8,
+    "evaluation_episodes_per_fit_per_condition": 80,
+    "allocation_seed": 288680,
+    "select_rule": "Use the enumerated scene manifest and declared split; do not select according to navigation outcomes.",
+    "official_test_policy": "Use public development/evaluation assets only when official test labels are unavailable; declare the actual source split in the populated manifest. Never call a custom holdout the official hidden test.",
+    "manifest": "examples/scene_goal_manifest.csv",
+    "scene_manifest_records": 66,
+    "manifest_benchmark_counts": {
+      "RoboTHOR": 22,
+      "ProcTHOR-10K": 22,
+      "R2R-adapted": 22
+    }
+  },
+  "training": {
+    "seeds": [
+      288681,
+      288682,
+      288683,
+      288684,
+      288685
+    ],
+    "max_environment_steps": 400000,
+    "evaluation_environment_steps": [
+      0,
+      25000,
+      50000,
+      75000,
+      100000,
+      125000,
+      150000,
+      175000,
+      200000,
+      225000,
+      250000,
+      275000,
+      300000,
+      325000,
+      350000,
+      375000,
+      400000
+    ],
+    "checkpoint_selection": "Primary endpoint is the final common400k checkpoint. Development-only checkpoint choices, if used, must be separately declared; never select by test outcomes.",
+    "actor_observation": {
+      "image_shape": [
+        300,
+        300,
+        3
+      ],
+      "dtype": "uint8",
+      "goal_channel": false,
+      "history": "Dreamer recurrent state and prior actions"
+    },
+    "max_episode_steps": 200,
+    "move_ahead_metres": 0.25,
+    "rotation_degrees": 90,
+    "field_profile": {
+      "N": 50,
+      "d_min": 1.0,
+      "tau_room": 0.3,
+      "delta_vis": 2,
+      "delta_novis": 5,
+      "alpha_k": [
+        5,
+        4,
+        3
+      ],
+      "beta_k": [
+        2,
+        1,
+        0,
+        -1
+      ],
+      "K_vis": 3,
+      "tau": 3,
+      "w_hi": 1.0,
+      "w_lo": 0.5,
+      "r_up": 1.0,
+      "r_down": -1.0,
+      "beta_tail_step": -1,
+      "graph_max_distance": 1.5,
+      "value_min_distance": 1.0
+    },
+    "learner_hyperparameters": "Original manuscript Dreamer hyperparameter table; architecture unchanged",
+    "hardware_profile": {
+      "reference_GPU": "NVIDIA RTX 3090",
+      "full_GPUs_per_fit": 1,
+      "learner_and_renderer_same_GPU": true,
+      "CPU_threads_per_fit": 16,
+      "host_RAM_GiB_per_fit": 128,
+      "software_profile": {
+        "Python": "3.10.12",
+        "AI2_THOR": "5.0.0",
+        "JAX": "0.4.33",
+        "JAXLIB": "0.4.33",
+        "NumPy": "1.26.4"
+      },
+      "device_memory_GiB": 24,
+      "maximum_parallel_fits": 4
+    },
+    "training_budget_definition": "Apply the same fixed environment-step ceiling and checkpoint schedule to all comparison groups.",
+    "actions_by_benchmark": {
+      "RoboTHOR": [
+        "MoveAhead",
+        "RotateLeft",
+        "RotateRight",
+        "LookUp",
+        "LookDown",
+        "Stop"
+      ],
+      "ProcTHOR": [
+        "MoveAhead",
+        "RotateLeft",
+        "RotateRight",
+        "LookUp",
+        "LookDown",
+        "Stop"
+      ],
+      "R2R-adapted": [
+        "MoveAhead",
+        "RotateLeft",
+        "RotateRight",
+        "Stop"
+      ]
+    }
+  },
+  "environment_reward": {
+    "step_penalty": -1.0,
+    "success_reward": 100.0,
+    "distance_coefficient": 1.0,
+    "progress_formula": "coefficient*(previous_goal_distance-current_goal_distance)",
+    "distance": "3D Euclidean distance between agent and one explicitly fixed target instance; no switching among instances",
+    "visibility_suppression": false,
+    "stop_success": "Explicit Stop; fixed target visible according to simulator metadata and agent-target distance<=1.0m",
+    "failure_stop": "Terminate with ordinary step penalty/progress; no added terminal bonus",
+    "original_paper_constants_preserved": [
+      "success_reward=100",
+      "step_penalty=-1"
+    ],
+    "newly_explicit_implementation_choices": [
+      "distance coefficient",
+      "3D metric",
+      "visibility predicate",
+      "action increments",
+      "failure/horizon conventions"
+    ],
+    "clipping_enabled": false,
+    "additional_horizon_penalty_enabled": false
+  },
+  "comparisons": {
+    "main": [
+      "Env",
+      "Geo",
+      "VLM-SP-Rew"
+    ],
+    "coefficient_ablation": [
+      0,
+      0.5,
+      1,
+      2
+    ],
+    "reuse_zero_and_one": true,
+    "geometry_control": "Build adjacency from actual simulator-reachable local edges on the same sampled points. Compute hops to the same fixed target, apply identical original distance bands and sign/region reward; use true simulator visibility for the visibility branch. No VLM output.",
+    "geometry_scope": "Full semantic graph/visibility-field pipeline versus a simulator-derived geometric field under matched information types; not a label-only causal ablation.",
+    "additional_diagnostics": []
+  },
+  "statistics": {
+    "metrics": [
+      "SR",
+      "SPL"
+    ],
+    "mean_and_sample_SD_across_fitted_seeds": true,
+    "per_pair_outcomes": true,
+    "paired_house_bootstrap_required": false,
+    "SPL_reference": "Actual navigable shortest path to the same target and success region; omit unsupported SPL, never replace with action count or straight-line heuristic.",
+    "episode_record_columns": [
+      "episode_id",
+      "benchmark",
+      "group",
+      "seed",
+      "pair_id",
+      "checkpoint_steps",
+      "success",
+      "spl"
+    ],
+    "exports": [
+      "results/per_seed.csv",
+      "results/per_pair_seed.csv",
+      "results/per_pair.csv",
+      "results/summary.csv"
+    ],
+    "sample_standard_deviation_ddof": 1
+  },
+  "configuration_kind": "fixed_experiment_protocol"
+}

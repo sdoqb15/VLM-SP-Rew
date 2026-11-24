@@ -3,9 +3,13 @@
 __pycache__/
 *.pyc
 .venv*/
+*.egg-info/
+build/
+dist/
 logdir/
 artifacts/
 api_audit/
+runtime/
 *.ckpt
 *.pt
 *.pth

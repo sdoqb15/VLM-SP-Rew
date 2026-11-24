@@ -1,0 +1,17 @@
+{
+  "step_penalty": -1.0,
+  "success_reward": 100.0,
+  "distance_coefficient": 1.0,
+  "distance_clipping_enabled": false,
+  "visibility_suppression": false,
+  "horizon_penalty": 0.0,
+  "success_distance_m": 1.0,
+  "lambda_shaping": 1.0,
+  "tau": 3.0,
+  "w_hi": 1.0,
+  "w_lo": 0.5,
+  "r_up": 1.0,
+  "r_down": -1.0,
+  "source": "Manuscript Appendix B: common reward for Env, Geo and VLM-SP-Rew",
+  "initial_value_rule": "Initialize the field value at episode reset before computing the first reward difference"
+}
