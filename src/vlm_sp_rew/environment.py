@@ -76,6 +76,11 @@ def make_local_controller(spec, run_root):
     require(kwargs.get('width') == 300 and kwargs.get('height') == 300,
             'The manuscript requires 300x300 RGB observations')
     class LocalController(Controller):
+        def start(self,*args,**options):
+            # AI2-THOR ExternalBuild otherwise replaces the requested platform
+            # with Linux64 and attempts X-display discovery for local binaries.
+            self._build.platform=CloudRendering
+            return super().start(*args,**options)
         @property
         def base_dir(self):
             result = Path(run_root) / 'engine_runtime'
@@ -187,10 +192,12 @@ class ObjectNavEnv:
             reference = dict(self.episode['spl_reference'])
             require(reference.get('scene_sha256') == self.episode['scene']['sha256'] and
                     reference.get('goal_category') == self.episode['goal_category'] and
+                    reference.get('goal_instance_ids') == self.episode['goal_instance_ids'] and
                     reference.get('start_position') == self.episode['start_position'] and
                     reference.get('start_yaw_degrees') == self.episode['start_yaw_degrees'] and
+                    reference.get('start_horizon_degrees') == self.episode.get('start_horizon_degrees',0 if self.benchmark=='R2R-adapted'else 30) and
                     reference.get('success_distance_m') == self.reward_config['success_distance_m'],
-                    'SPL reference must match the exact scene, goal, start and success rule')
+                    'SPL reference must match the exact scene, fixed target, start pose and success rule')
             reference['executed_path_m'] = path_length_metres(self.poses)
             obs['log/spl'] = np.float32(qualified_spl(bool(result['success']), reference))
             obs['log/spl_valid'] = np.bool_(True)

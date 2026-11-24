@@ -87,7 +87,7 @@ Each evaluation episode additionally carries `spl_reference` with:
 
 - `reference_kind: qualified_navigable_shortest_path`, `units: metres`, `success_rule_matched: true`;
 - `shortest_path_m` measured on the native navigable mesh to the same goal and valid stop region;
-- matching `scene_sha256`, `goal_category`, `start_position`, `start_yaw_degrees`, `success_distance_m: 1.0`.
+- matching `scene_sha256`, `goal_category`, `goal_instance_ids`, `start_position`, `start_yaw_degrees`, `start_horizon_degrees`, `success_distance_m: 1.0`.
 
 Retain the native shortest-path/visibility qualification record with the bank. A straight-line target distance, graph-hop count, route endpoint or action count is not a replacement for the ObjectNav SPL denominator.
 
@@ -100,6 +100,8 @@ python -m vlm_sp_rew.qualify_paths --episode-manifest /data/task/bank.json \
   --max-api-calls 10000 --max-seconds 900 --out /data/task/path-qualification
 ```
 
-The qualifier checks the fixed target, actual stop visibility and native obstacle-aware paths. THOR uses its complete reachable lattice and allowed yaw/camera states. R2R-adapted uses the native ObjectNav annotated goal-viewpoint convention: each evaluation episode supplies `native_objectnav_goal_region`, a relative path/SHA256 record for a JSON file with matching `scene_sha256`, `goal_instance_ids`, `success_distance_m: 1.0`, `coordinate_frame: Habitat_Y_up`, `reference_kind: native_objectnav_goal_viewpoints`, and its actual `positions`. This source must belong to the adapted object-goal task; the instruction route endpoint is not its replacement. The output records the region convention and source used for the denominator.
+The qualifier checks the fixed target, actual stop visibility and native obstacle-aware paths. THOR enumerates its reachable lattice and allowed yaw/camera states. If a complete native path projects its requested endpoint onto the navmesh, the projected pose is separately teleported and checked against the same visibility/distance rule; a partial path or an ineligible endpoint is rejected. Requested and verified endpoints, path returns and rejections are retained. R2R-adapted uses the native ObjectNav annotated goal-viewpoint convention: each evaluation episode supplies `native_objectnav_goal_region`, a relative path/SHA256 record for a JSON file with matching `scene_sha256`, `goal_instance_ids`, `success_distance_m: 1.0`, `coordinate_frame: Habitat_Y_up`, `reference_kind: native_objectnav_goal_viewpoints`, and its actual `positions`. This source must belong to the adapted object-goal task; the instruction route endpoint is not its replacement. The output records the region convention and source used for the denominator.
 
 Use `path-qualification/bank.json` for evaluation. Retain the native query log, selected path and valid endpoints with the dataset. The input bank is left unchanged. All methods use the same frozen reference bank.
+
+SPL uses native continuous-navmesh path length. For THOR reference queries, a separate controller disables grid snapping so that projected navmesh endpoints can be physically checked without forced teleportation. Agent geometry, collisions, target identity and the visibility/distance stop predicate are retained. The policy controller configuration is left unchanged. Both controller configurations are recorded with the reference bank; the query lattice is not itself used as a substitute grid-distance denominator.

@@ -97,6 +97,22 @@ class AdapterTests(unittest.TestCase):
         self.assertAlmostEqual(float(obs['reward']),99.,places=4)
         self.assertTrue(obs['is_last']);self.assertTrue(obs['is_terminal'])
         self.assertFalse(obs['log/spl_valid'])
+    def test_spl_reference_is_bound_to_fixed_instance_and_camera_pose(self):
+        episode=self.bank['episodes'][0]
+        reference=dict(reference_kind='qualified_navigable_shortest_path',units='metres',success_rule_matched=True,
+            shortest_path_m=1.,scene_sha256=episode['scene']['sha256'],goal_category=episode['goal_category'],
+            goal_instance_ids=episode['goal_instance_ids'],start_position=episode['start_position'],
+            start_yaw_degrees=episode['start_yaw_degrees'],start_horizon_degrees=30.,success_distance_m=1.)
+        for key,wrong in [('goal_instance_ids',['another-plant']),('start_horizon_degrees',0.)]:
+            episode['spl_reference']={**reference,key:wrong};self.write_bank()
+            env=self.env();env.reset()
+            with self.assertRaisesRegex(ValueError,'fixed target, start pose'):env.step({'action':5})
+        episode['spl_reference']=reference;self.write_bank()
+        env=self.env(max_steps=10);env.reset()
+        for _ in range(5):env.step({'action':0})
+        result=env.step({'action':5})
+        self.assertTrue(result['log/spl_valid'])
+        self.assertAlmostEqual(float(result['log/spl']),.8,places=6)
     def test_three_groups_same_schedule_and_shared_reward_with_zero_coefficient(self):
         self.reward['lambda_shaping']=0
         self.reward_path.write_text(json.dumps(self.reward))

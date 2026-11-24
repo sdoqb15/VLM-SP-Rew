@@ -1,7 +1,7 @@
 """Navigation references must satisfy actual visibility and obstacle-aware paths."""
 import copy,unittest
 from types import SimpleNamespace
-from vlm_sp_rew.qualify_paths import native_reference
+from vlm_sp_rew.qualify_paths import native_reference,reference_controller_spec
 
 class NativeControllerFixture:
     def __init__(self):self.position=dict(x=0.,y=.9,z=0.);self.yaw=0.;self.calls=[];self.bad_endpoint=False
@@ -20,6 +20,14 @@ class NativeControllerFixture:
         raise AssertionError(a)
 
 class NativePathTests(unittest.TestCase):
+    def test_continuous_reference_oracle_does_not_change_the_policy_controller(self):
+        policy=dict(controller_kwargs=dict(snapToGrid=True,gridSize=.25,rotateStepDegrees=90))
+        oracle=reference_controller_spec(policy)
+        self.assertTrue(policy['controller_kwargs']['snapToGrid'])
+        self.assertFalse(oracle['controller_kwargs']['snapToGrid'])
+        self.assertEqual(oracle['controller_kwargs']['gridSize'],.25)
+        habitat=dict(backend='habitat',gpu_device_id=0)
+        self.assertEqual(reference_controller_spec(habitat),habitat)
     def episode(self):return dict(goal_instance_ids=['plant-fixed'],goal_category='HousePlant',start_position=dict(x=0.,y=.9,z=0.),start_yaw_degrees=0.,start_horizon_degrees=0.)
     def test_occluded_near_pose_is_not_a_success_region_and_path_is_not_euclidean(self):
         c=NativeControllerFixture();r=native_reference(c,self.episode(),'ProcTHOR',c.step)
@@ -49,6 +57,26 @@ class NativePathTests(unittest.TestCase):
     def test_shortest_path_endpoint_mismatch_is_rejected(self):
         c=NativeControllerFixture();c.bad_endpoint=True
         with self.assertRaisesRegex(ValueError,'endpoints'):native_reference(c,self.episode(),'ProcTHOR',c.step)
+    def test_native_projected_endpoint_must_be_observed_in_the_same_success_region(self):
+        class Projected(NativeControllerFixture):
+            def event(self,*args,**kwargs):
+                result=super().event(*args,**kwargs)
+                result.metadata['objects'][0]['visible']=self.position['x']>=1.9
+                return result
+        c=Projected();c.bad_endpoint=True
+        result=native_reference(c,self.episode(),'ProcTHOR',c.step)
+        self.assertEqual(result['endpoint']['x'],1.9)
+        self.assertTrue(result['native_projection_verified'])
+        self.assertEqual(result['visible_pose']['position']['x'],1.9)
+        self.assertGreater(result['shortest_path_m'],6.)
+    def test_partial_native_path_cannot_supply_a_reference(self):
+        class Partial(NativeControllerFixture):
+            def step(self,**kwargs):
+                result=super().step(**kwargs)
+                if kwargs['action']=='GetShortestPathToPoint':result.metadata['actionReturn']['status']='PathPartial'
+                return result
+        c=Partial()
+        with self.assertRaisesRegex(ValueError,'No complete native path'):native_reference(c,self.episode(),'ProcTHOR',c.step)
     def test_fixed_target_is_never_replaced_by_another_instance(self):
         c=NativeControllerFixture();e=self.episode();e['goal_instance_ids']=['not-the-actual-object']
         with self.assertRaisesRegex(ValueError,'requested goal absent'):native_reference(c,e,'ProcTHOR',c.step)
